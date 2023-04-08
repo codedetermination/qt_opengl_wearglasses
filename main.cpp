@@ -2,6 +2,10 @@
 #include <QApplication>
 #include <QSurfaceFormat>
 
+/// @brief  main函数运行QT程序
+/// @param argc 
+/// @param argv 
+/// @return  是否运行成功
 int main(int argc, char *argv[])
 {
     //Q_INIT_RESOURCE(texture1);

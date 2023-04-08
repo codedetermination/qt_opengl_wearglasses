@@ -1,0 +1,6 @@
+<map id="fit_model" name="fit_model">
+<area shape="rect" id="node1" title="从给定的图像和3D形状模型中估计3D形状和表情系数。" alt="" coords="163,197,247,224"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,157,47"/>
+<area shape="rect" id="node3" title=" " alt="" coords="182,13,229,39"/>
+<area shape="rect" id="node4" title=" " alt="" coords="253,13,312,39"/>
+</map>

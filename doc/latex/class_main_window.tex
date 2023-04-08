@@ -1,0 +1,166 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+主窗口类 生成主要的窗口，包括摄像头显示，人脸检测，人脸关键点检测，人脸模型拟合  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+
+
+Inheritance diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_main_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_main_window__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a6d9d2f93d6732a8d64ac1056618cfafe}{myopenglupdate}} ()
+\begin{DoxyCompactList}\small\item\em 定时器槽函数 用来更新opengl窗口 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_adadbe6479595ee7cc5ad07d47d470b51}{shoot1}} ()
+\begin{DoxyCompactList}\small\item\em 拍照按钮槽函数 用来拍照，隐藏拍照按钮，显示重拍和确认按钮 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_aad3682cf736e97f28d55a4c7803527ef}{reshoot}} ()
+\begin{DoxyCompactList}\small\item\em 重拍按钮槽函数 用来重拍，隐藏重拍和确认按钮，显示拍照按钮 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_aa1e2143c98d2247623ec1c0e0af93bf5}{show\+\_\+cam}} ()
+\begin{DoxyCompactList}\small\item\em 确认按钮槽函数 用来确认拍照，隐藏重拍和确认按钮，显示拍照按钮 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em 主窗口的构造函数 用来初始化主窗口的界面，以及连接信号和槽，以及初始化定时器 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em 主窗口的析构函数 用来释放主窗口的界面，以及释放定时器 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Timer $\ast$ \mbox{\hyperlink{class_main_window_a356578805ed1248a7f2807434cb0e5ee}{timer}}
+\begin{DoxyCompactList}\small\item\em 主窗口类构造函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Main\+Window $\ast$ \mbox{\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}}
+\begin{DoxyCompactList}\small\item\em 主窗口的界面指针 用来指向主窗口的界面 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+主窗口类 生成主要的窗口，包括摄像头显示，人脸检测，人脸关键点检测，人脸模型拟合 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ui\+::\+Main\+Window} & $\ast$ui 界面指针 \\
+\hline
+{\em Q\+Push\+Button} & shoot 拍照按钮 \\
+\hline
+{\em Q\+Push\+Button} & reshoot 重拍按钮 \\
+\hline
+{\em Q\+Timer} & $\ast$timer 定时器 \\
+\hline
+{\em points\+\_\+68$\ast$} & keypointface 人脸关键点检测类指针 \\
+\hline
+{\em fit\+\_\+model$\ast$} & fitmodel 人脸模型拟合类指针 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+主窗口的构造函数 用来初始化主窗口的界面，以及连接信号和槽，以及初始化定时器 
+
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+主窗口的析构函数 用来释放主窗口的界面，以及释放定时器 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_a6d9d2f93d6732a8d64ac1056618cfafe}\label{class_main_window_a6d9d2f93d6732a8d64ac1056618cfafe}} 
+\index{MainWindow@{MainWindow}!myopenglupdate@{myopenglupdate}}
+\index{myopenglupdate@{myopenglupdate}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{myopenglupdate}{myopenglupdate}}
+{\footnotesize\ttfamily void Main\+Window\+::myopenglupdate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+定时器槽函数 用来更新opengl窗口 
+
+\mbox{\Hypertarget{class_main_window_aad3682cf736e97f28d55a4c7803527ef}\label{class_main_window_aad3682cf736e97f28d55a4c7803527ef}} 
+\index{MainWindow@{MainWindow}!reshoot@{reshoot}}
+\index{reshoot@{reshoot}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{reshoot}{reshoot}}
+{\footnotesize\ttfamily void Main\+Window\+::reshoot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+重拍按钮槽函数 用来重拍，隐藏重拍和确认按钮，显示拍照按钮 
+
+\mbox{\Hypertarget{class_main_window_adadbe6479595ee7cc5ad07d47d470b51}\label{class_main_window_adadbe6479595ee7cc5ad07d47d470b51}} 
+\index{MainWindow@{MainWindow}!shoot1@{shoot1}}
+\index{shoot1@{shoot1}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{shoot1}{shoot1}}
+{\footnotesize\ttfamily void Main\+Window\+::shoot1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+拍照按钮槽函数 用来拍照，隐藏拍照按钮，显示重拍和确认按钮 
+
+\mbox{\Hypertarget{class_main_window_aa1e2143c98d2247623ec1c0e0af93bf5}\label{class_main_window_aa1e2143c98d2247623ec1c0e0af93bf5}} 
+\index{MainWindow@{MainWindow}!show\_cam@{show\_cam}}
+\index{show\_cam@{show\_cam}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{show\_cam}{show\_cam}}
+{\footnotesize\ttfamily void Main\+Window\+::show\+\_\+cam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+确认按钮槽函数 用来确认拍照，隐藏重拍和确认按钮，显示拍照按钮 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_main_window_a356578805ed1248a7f2807434cb0e5ee}\label{class_main_window_a356578805ed1248a7f2807434cb0e5ee}} 
+\index{MainWindow@{MainWindow}!timer@{timer}}
+\index{timer@{timer}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily Q\+Timer$\ast$ Main\+Window\+::timer}
+
+
+
+主窗口类构造函数 
+
+\mbox{\Hypertarget{class_main_window_a35466a70ed47252a0191168126a352a5}\label{class_main_window_a35466a70ed47252a0191168126a352a5}} 
+\index{MainWindow@{MainWindow}!ui@{ui}}
+\index{ui@{ui}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Main\+Window$\ast$ Main\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+主窗口的界面指针 用来指向主窗口的界面 
+

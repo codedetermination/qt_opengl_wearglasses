@@ -1,0 +1,719 @@
+\hypertarget{class_main_glwight}{}\doxysection{Main\+Glwight Class Reference}
+\label{class_main_glwight}\index{MainGlwight@{MainGlwight}}
+
+
+Open\+G\+L窗口自定义窗口类  
+
+
+
+
+{\ttfamily \#include $<$Main\+Glwight.\+h$>$}
+
+
+
+Inheritance diagram for Main\+Glwight\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_main_glwight__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Glwight\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_glwight__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_glwight_a5ec81226628cee1565ae592319d25d8a}{Main\+Glwight}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em 构造函数 make\+Current()函数用于将当前的\+Open\+G\+L上下文设置为当前窗口的上下文，这样才能在当前窗口中进行\+Open\+G\+L操作 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_main_glwight_ad4f8b472a1afbe985f35ac4a3edb8ed2}{$\sim$\+Main\+Glwight}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_a6530e3fd9a1ac61ddc64ce124a146ad1}{update\+\_\+scence}} ()
+\begin{DoxyCompactList}\small\item\em 调用用来更新\+Opengl显示窗口的函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_a76f9ead967165581a9803dfcb5c5708c}{setup\+Mesh}} (std\+::vector$<$ \mbox{\hyperlink{struct_vertex}{Vertex}} $>$ vertices, std\+::vector$<$ unsigned int $>$indices)
+\begin{DoxyCompactList}\small\item\em 初始化\+Mesh，用于绑定\+V\+A\+O，\+V\+B\+O，\+E\+B\+O，设置顶点属性指针 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_a9f4ddf38c11d045761f3bde0466fca82}{Draw}} (std\+::vector$<$ \mbox{\hyperlink{struct_texture}{Texture}} $>$ textures, std\+::vector$<$ unsigned int $>$indices)
+\begin{DoxyCompactList}\small\item\em 绘制\+Mesh的函数 循环绘制\+Mesh中的每个纹理，绑定纹理，设置纹理单元，绘制\+Mesh \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_ac573e1942d20d5dafc522774c6a27aa9}{shoot\+\_\+image}} ()
+\begin{DoxyCompactList}\small\item\em 传递摄像头图像 shoot为false，表示拍摄完成，不再拍摄 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_a9eedaaa1c83e599d802b98ed8a10fd10}{reshoot}} ()
+\begin{DoxyCompactList}\small\item\em 重新拍摄 shoot为true，表示重新拍摄 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_aa17025099e587a691a31fe9cbf6f1b45}{show\+\_\+camera}} ()
+\begin{DoxyCompactList}\small\item\em 显示摄像头图像 show\+\_\+cam为true，表示显示摄像头图像 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_ac945cbb01917b9dd0989aafd3994dff2}{reshow\+\_\+camera}} ()
+\begin{DoxyCompactList}\small\item\em 隐藏摄像头图像 show\+\_\+cam为false，表示隐藏摄像头图像 \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{class_main_glwight_ac3b626e4a59dba70fe00925042821bec}{get\+\_\+image}} ()
+\begin{DoxyCompactList}\small\item\em 获取摄像头图像 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_main_glwight_ad175b3e3406aca5f38f1ac07a1d04dcf}{setup\+\_\+points68}} ()
+\begin{DoxyCompactList}\small\item\em 进行68个人脸关键点检测 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_mesh}{Mesh}} $>$ \mbox{\hyperlink{class_main_glwight_aeb446111e95e40a16334cc75990ad4db}{mesh2print}}
+\begin{DoxyCompactList}\small\item\em 用于绘制的mesh \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpoints__68}{points\+\_\+68}} $\ast$ \mbox{\hyperlink{class_main_glwight_a9498cbbfe100b271d15b3e457da8dee0}{keypointface}}
+\begin{DoxyCompactList}\small\item\em 用于绘制的关键点 \end{DoxyCompactList}\item 
+Q\+Open\+G\+L\+Vertex\+Array\+Object \mbox{\hyperlink{class_main_glwight_a40367f780d8b2ab46c0d0431d88cf1ef}{V\+AO}}
+\begin{DoxyCompactList}\small\item\em 用于绘制的\+V\+AO \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_main_glwight_a23223cd122f9564310763ba4a9a1f80c}{V\+BO}}
+\begin{DoxyCompactList}\small\item\em 用于绘制的\+V\+BO \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_main_glwight_aaaef658ba13a46eb9a8a25421be5cbf8}{E\+BO}}
+\begin{DoxyCompactList}\small\item\em E\+BO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_glwight_a4b21b016d385a7f76613cd124c65d757}{initialize\+GL}} () override
+\begin{DoxyCompactList}\small\item\em 初始化\+Open\+G\+L窗口 初始化\+Open\+G\+L窗口，设置\+Open\+G\+L的一些参数，如背景颜色，着色模式，深度测试，纹理等 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_aea4f25231f609ae878ab4925e54a10d6}{paint\+GL}} () override
+\begin{DoxyCompactList}\small\item\em 绘制\+Open\+G\+L窗口 绘制\+Open\+G\+L窗口，绘制\+Mesh，绘制关键点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_ad66a013186ef99cc8d42741b35153dd8}{resize\+GL}} (int w, int h) override
+\begin{DoxyCompactList}\small\item\em 改变窗口大小 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_a5d71c750075a96760bec9abfd8b0a821}{mouse\+Press\+Event}} (Q\+Mouse\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em 鼠标事件 用于固定鼠标位置，实现鼠标移动 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_abde71bff4d72e755c2e5000488828904}{mouse\+Move\+Event}} (Q\+Mouse\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em 鼠标移动事件 用于控制opengl中摄像机，实现移动 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_glwight_a24a50696d32232da75d220a12b68d12f}{mouse\+Release\+Event}} (Q\+Mouse\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em 鼠标释放事件 用于还原鼠标位置，实现鼠标移动 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Matrix4x4 \mbox{\hyperlink{class_main_glwight_a26c6cd8f8f8006950a855b5fc9847780}{model\+\_\+qt}}
+\item 
+Q\+Matrix4x4 \mbox{\hyperlink{class_main_glwight_a45c924720e9a185483fd40954d0e1f6e}{projection\+\_\+qt}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+用于传递模型矩阵 \end{quote}
+\end{DoxyCompactList}\item 
+Q\+Matrix4x4 \mbox{\hyperlink{class_main_glwight_aa79023b206b5cd5ec8a8dc4844386fd9}{view\+\_\+qt}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+用于传递投影矩阵 \end{quote}
+\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_main_glwight_ac83f8216d8e5eebf0c12b99b51ea527d}{xpos}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+用于传递观察矩阵 \end{quote}
+\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_main_glwight_a15760b43cdaf657f545f7ae53c9e8619}{ypos}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+鼠标x坐标 \end{quote}
+\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_main_glwight_abb6c0ec7a177470225d518ea38f74786}{lastxpos}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+鼠标y坐标 \end{quote}
+\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_main_glwight_a85743c06ffa0103c0210edae0e6f2694}{lastypos}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+鼠标上一次x坐标 \end{quote}
+\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_main_glwight_a5fcf19969286d92d3fc28182c8462fd6}{angle}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+鼠标上一次y坐标 \end{quote}
+\end{DoxyCompactList}\item 
+glm\+::mat4 \mbox{\hyperlink{class_main_glwight_ac722a8bf1ad85df0b54f26a4942cc7f5}{view}} = glm\+::mat4(1.\+0f)
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+旋转角度 \end{quote}
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_camera}{Camera}} $\ast$ \mbox{\hyperlink{class_main_glwight_ae6deae9a6199c8f5ddb67239381deab3}{camera}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+观察矩阵 \end{quote}
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shader}{Shader}} $\ast$ \mbox{\hyperlink{class_main_glwight_a12176e51d0d941c9f762f09629fb757a}{shader}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+摄像机 \end{quote}
+\end{DoxyCompactList}\item 
+Q\+Timer $\ast$ \mbox{\hyperlink{class_main_glwight_a562b42682b8bb893a4e9051ce825420e}{timer}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+着色器 \end{quote}
+\end{DoxyCompactList}\item 
+cv\+::\+Video\+Capture \mbox{\hyperlink{class_main_glwight_aeaa863578e245022f9898d8e15aa61bf}{cap}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+定时器 \end{quote}
+\end{DoxyCompactList}\item 
+G\+Luint \mbox{\hyperlink{class_main_glwight_a843fcafd9a39e499adf0033573354ce3}{m\+\_\+texture}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+摄像头 \end{quote}
+\end{DoxyCompactList}\item 
+G\+Lint \mbox{\hyperlink{class_main_glwight_a0bd390a917aa870d8f9c5e6e553d1e7f}{m\+\_\+pos\+Attr}} = 0
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+纹理 \end{quote}
+\end{DoxyCompactList}\item 
+G\+Lint \mbox{\hyperlink{class_main_glwight_ad1e449c551df9449fc8054a8fb05fb39}{m\+\_\+col\+Attr}} = 0
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+顶点属性 \end{quote}
+\end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{class_main_glwight_a1e540d1182a985a9f2a2c358df397b01}{image}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+颜色属性 \end{quote}
+\end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{class_main_glwight_a3f117c1ee424ca67de180ebce2c55004}{image\+\_\+cpy}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+摄像头图像 \end{quote}
+\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_main_glwight_a335a9785c45681f6b126c052a7ff0088}{test}} = 0
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+摄像头图像的拷贝 \end{quote}
+\end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_main_glwight_a18cbc6f1ddb5384ad82056122d41009b}{shoot}} = true
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+用于测试 \end{quote}
+\end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_main_glwight_acf02c166e2e0295404e0bb261e0d29f5}{show\+\_\+cam}} = true
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+用于判断是否拍摄 \end{quote}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Open\+G\+L窗口自定义窗口类 
+
+Open\+G\+L窗口自定义窗口类，继承自\+Q\+Open\+G\+L\+Widget,完成了\+Open\+G\+L窗口的初始化，绘制，更新等操作，实现了鼠标键盘事件的响应，实现了定时器的功能，并且实现了对于2dtexture和3d模型的加载，绘制，更新等操作 \begin{DoxySeeAlso}{See also}
+Q\+Open\+G\+L\+Widget 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_glwight_a5ec81226628cee1565ae592319d25d8a}\label{class_main_glwight_a5ec81226628cee1565ae592319d25d8a}} 
+\index{MainGlwight@{MainGlwight}!MainGlwight@{MainGlwight}}
+\index{MainGlwight@{MainGlwight}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{MainGlwight()}{MainGlwight()}}
+{\footnotesize\ttfamily Main\+Glwight\+::\+Main\+Glwight (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+构造函数 make\+Current()函数用于将当前的\+Open\+G\+L上下文设置为当前窗口的上下文，这样才能在当前窗口中进行\+Open\+G\+L操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & 父窗口 \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Q\+Open\+G\+L\+Widget 
+
+Q\+Open\+G\+L\+Functions 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_main_glwight_ad4f8b472a1afbe985f35ac4a3edb8ed2}\label{class_main_glwight_ad4f8b472a1afbe985f35ac4a3edb8ed2}} 
+\index{MainGlwight@{MainGlwight}!````~MainGlwight@{$\sim$MainGlwight}}
+\index{````~MainGlwight@{$\sim$MainGlwight}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainGlwight()}{~MainGlwight()}}
+{\footnotesize\ttfamily Main\+Glwight\+::$\sim$\+Main\+Glwight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+析构函数 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_glwight_a9f4ddf38c11d045761f3bde0466fca82}\label{class_main_glwight_a9f4ddf38c11d045761f3bde0466fca82}} 
+\index{MainGlwight@{MainGlwight}!Draw@{Draw}}
+\index{Draw@{Draw}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::\+Draw (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_texture}{Texture}} $>$}]{textures,  }\item[{std\+::vector$<$ unsigned int $>$}]{indices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+绘制\+Mesh的函数 循环绘制\+Mesh中的每个纹理，绑定纹理，设置纹理单元，绘制\+Mesh 
+
+
+\begin{DoxyParams}{Parameters}
+{\em textures} & 纹理 \\
+\hline
+{\em indices} & 顶点索引数据 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_glwight_ac3b626e4a59dba70fe00925042821bec}\label{class_main_glwight_ac3b626e4a59dba70fe00925042821bec}} 
+\index{MainGlwight@{MainGlwight}!get\_image@{get\_image}}
+\index{get\_image@{get\_image}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{get\_image()}{get\_image()}}
+{\footnotesize\ttfamily cv\+::\+Mat Main\+Glwight\+::get\+\_\+image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取摄像头图像 
+
+\begin{DoxyReturn}{Returns}
+摄像头图像 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_main_glwight_a4b21b016d385a7f76613cd124c65d757}\label{class_main_glwight_a4b21b016d385a7f76613cd124c65d757}} 
+\index{MainGlwight@{MainGlwight}!initializeGL@{initializeGL}}
+\index{initializeGL@{initializeGL}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{initializeGL()}{initializeGL()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::initialize\+GL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+初始化\+Open\+G\+L窗口 初始化\+Open\+G\+L窗口，设置\+Open\+G\+L的一些参数，如背景颜色，着色模式，深度测试，纹理等 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_main_glwight_a4b21b016d385a7f76613cd124c65d757}{initialize\+G\+L()}} ~\newline
+ 
+
+\mbox{\hyperlink{class_main_glwight_aea4f25231f609ae878ab4925e54a10d6}{paint\+G\+L()}} 
+
+\mbox{\hyperlink{class_main_glwight_ad66a013186ef99cc8d42741b35153dd8}{resize\+G\+L()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_main_glwight_abde71bff4d72e755c2e5000488828904}\label{class_main_glwight_abde71bff4d72e755c2e5000488828904}} 
+\index{MainGlwight@{MainGlwight}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+鼠标移动事件 用于控制opengl中摄像机，实现移动 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & 鼠标移动事件 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_glwight_a5d71c750075a96760bec9abfd8b0a821}\label{class_main_glwight_a5d71c750075a96760bec9abfd8b0a821}} 
+\index{MainGlwight@{MainGlwight}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+鼠标事件 用于固定鼠标位置，实现鼠标移动 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & 鼠标事件 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_glwight_a24a50696d32232da75d220a12b68d12f}\label{class_main_glwight_a24a50696d32232da75d220a12b68d12f}} 
+\index{MainGlwight@{MainGlwight}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+鼠标释放事件 用于还原鼠标位置，实现鼠标移动 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & 鼠标释放事件 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_glwight_aea4f25231f609ae878ab4925e54a10d6}\label{class_main_glwight_aea4f25231f609ae878ab4925e54a10d6}} 
+\index{MainGlwight@{MainGlwight}!paintGL@{paintGL}}
+\index{paintGL@{paintGL}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{paintGL()}{paintGL()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::paint\+GL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+绘制\+Open\+G\+L窗口 绘制\+Open\+G\+L窗口，绘制\+Mesh，绘制关键点 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_main_glwight_a4b21b016d385a7f76613cd124c65d757}{initialize\+G\+L()}} 
+
+\mbox{\hyperlink{class_main_glwight_aea4f25231f609ae878ab4925e54a10d6}{paint\+G\+L()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_main_glwight_a9eedaaa1c83e599d802b98ed8a10fd10}\label{class_main_glwight_a9eedaaa1c83e599d802b98ed8a10fd10}} 
+\index{MainGlwight@{MainGlwight}!reshoot@{reshoot}}
+\index{reshoot@{reshoot}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{reshoot()}{reshoot()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::reshoot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重新拍摄 shoot为true，表示重新拍摄 
+
+\mbox{\Hypertarget{class_main_glwight_ac945cbb01917b9dd0989aafd3994dff2}\label{class_main_glwight_ac945cbb01917b9dd0989aafd3994dff2}} 
+\index{MainGlwight@{MainGlwight}!reshow\_camera@{reshow\_camera}}
+\index{reshow\_camera@{reshow\_camera}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{reshow\_camera()}{reshow\_camera()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::reshow\+\_\+camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+隐藏摄像头图像 show\+\_\+cam为false，表示隐藏摄像头图像 
+
+\mbox{\Hypertarget{class_main_glwight_ad66a013186ef99cc8d42741b35153dd8}\label{class_main_glwight_ad66a013186ef99cc8d42741b35153dd8}} 
+\index{MainGlwight@{MainGlwight}!resizeGL@{resizeGL}}
+\index{resizeGL@{resizeGL}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{resizeGL()}{resizeGL()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::resize\+GL (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+改变窗口大小 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & \\
+\hline
+{\em h} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_glwight_ad175b3e3406aca5f38f1ac07a1d04dcf}\label{class_main_glwight_ad175b3e3406aca5f38f1ac07a1d04dcf}} 
+\index{MainGlwight@{MainGlwight}!setup\_points68@{setup\_points68}}
+\index{setup\_points68@{setup\_points68}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{setup\_points68()}{setup\_points68()}}
+{\footnotesize\ttfamily bool Main\+Glwight\+::setup\+\_\+points68 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+进行68个人脸关键点检测 
+
+\begin{DoxyReturn}{Returns}
+是否检测成功 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_main_glwight_a76f9ead967165581a9803dfcb5c5708c}\label{class_main_glwight_a76f9ead967165581a9803dfcb5c5708c}} 
+\index{MainGlwight@{MainGlwight}!setupMesh@{setupMesh}}
+\index{setupMesh@{setupMesh}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{setupMesh()}{setupMesh()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::setup\+Mesh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_vertex}{Vertex}} $>$}]{vertices,  }\item[{std\+::vector$<$ unsigned int $>$}]{indices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+初始化\+Mesh，用于绑定\+V\+A\+O，\+V\+B\+O，\+E\+B\+O，设置顶点属性指针 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & 顶点数据 \\
+\hline
+{\em indices} & 顶点索引数据 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_glwight_ac573e1942d20d5dafc522774c6a27aa9}\label{class_main_glwight_ac573e1942d20d5dafc522774c6a27aa9}} 
+\index{MainGlwight@{MainGlwight}!shoot\_image@{shoot\_image}}
+\index{shoot\_image@{shoot\_image}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{shoot\_image()}{shoot\_image()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::shoot\+\_\+image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+传递摄像头图像 shoot为false，表示拍摄完成，不再拍摄 
+
+\mbox{\Hypertarget{class_main_glwight_aa17025099e587a691a31fe9cbf6f1b45}\label{class_main_glwight_aa17025099e587a691a31fe9cbf6f1b45}} 
+\index{MainGlwight@{MainGlwight}!show\_camera@{show\_camera}}
+\index{show\_camera@{show\_camera}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{show\_camera()}{show\_camera()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::show\+\_\+camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+显示摄像头图像 show\+\_\+cam为true，表示显示摄像头图像 
+
+\mbox{\Hypertarget{class_main_glwight_a6530e3fd9a1ac61ddc64ce124a146ad1}\label{class_main_glwight_a6530e3fd9a1ac61ddc64ce124a146ad1}} 
+\index{MainGlwight@{MainGlwight}!update\_scence@{update\_scence}}
+\index{update\_scence@{update\_scence}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{update\_scence()}{update\_scence()}}
+{\footnotesize\ttfamily void Main\+Glwight\+::update\+\_\+scence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+调用用来更新\+Opengl显示窗口的函数 
+
+\begin{DoxySeeAlso}{See also}
+update() 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_main_glwight_a5fcf19969286d92d3fc28182c8462fd6}\label{class_main_glwight_a5fcf19969286d92d3fc28182c8462fd6}} 
+\index{MainGlwight@{MainGlwight}!angle@{angle}}
+\index{angle@{angle}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily float Main\+Glwight\+::angle = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+鼠标上一次y坐标 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_ae6deae9a6199c8f5ddb67239381deab3}\label{class_main_glwight_ae6deae9a6199c8f5ddb67239381deab3}} 
+\index{MainGlwight@{MainGlwight}!camera@{camera}}
+\index{camera@{camera}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_camera}{Camera}}$\ast$ Main\+Glwight\+::camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+观察矩阵 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_aeaa863578e245022f9898d8e15aa61bf}\label{class_main_glwight_aeaa863578e245022f9898d8e15aa61bf}} 
+\index{MainGlwight@{MainGlwight}!cap@{cap}}
+\index{cap@{cap}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{cap}{cap}}
+{\footnotesize\ttfamily cv\+::\+Video\+Capture Main\+Glwight\+::cap\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+定时器 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_aaaef658ba13a46eb9a8a25421be5cbf8}\label{class_main_glwight_aaaef658ba13a46eb9a8a25421be5cbf8}} 
+\index{MainGlwight@{MainGlwight}!EBO@{EBO}}
+\index{EBO@{EBO}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{EBO}{EBO}}
+{\footnotesize\ttfamily unsigned int Main\+Glwight\+::\+E\+BO}
+
+
+
+E\+BO. 
+
+\mbox{\Hypertarget{class_main_glwight_a1e540d1182a985a9f2a2c358df397b01}\label{class_main_glwight_a1e540d1182a985a9f2a2c358df397b01}} 
+\index{MainGlwight@{MainGlwight}!image@{image}}
+\index{image@{image}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily cv\+::\+Mat Main\+Glwight\+::image\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+颜色属性 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a3f117c1ee424ca67de180ebce2c55004}\label{class_main_glwight_a3f117c1ee424ca67de180ebce2c55004}} 
+\index{MainGlwight@{MainGlwight}!image\_cpy@{image\_cpy}}
+\index{image\_cpy@{image\_cpy}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{image\_cpy}{image\_cpy}}
+{\footnotesize\ttfamily cv\+::\+Mat Main\+Glwight\+::image\+\_\+cpy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+摄像头图像 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a9498cbbfe100b271d15b3e457da8dee0}\label{class_main_glwight_a9498cbbfe100b271d15b3e457da8dee0}} 
+\index{MainGlwight@{MainGlwight}!keypointface@{keypointface}}
+\index{keypointface@{keypointface}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{keypointface}{keypointface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoints__68}{points\+\_\+68}}$\ast$ Main\+Glwight\+::keypointface}
+
+
+
+用于绘制的关键点 
+
+\mbox{\Hypertarget{class_main_glwight_abb6c0ec7a177470225d518ea38f74786}\label{class_main_glwight_abb6c0ec7a177470225d518ea38f74786}} 
+\index{MainGlwight@{MainGlwight}!lastxpos@{lastxpos}}
+\index{lastxpos@{lastxpos}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{lastxpos}{lastxpos}}
+{\footnotesize\ttfamily float Main\+Glwight\+::lastxpos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+鼠标y坐标 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a85743c06ffa0103c0210edae0e6f2694}\label{class_main_glwight_a85743c06ffa0103c0210edae0e6f2694}} 
+\index{MainGlwight@{MainGlwight}!lastypos@{lastypos}}
+\index{lastypos@{lastypos}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{lastypos}{lastypos}}
+{\footnotesize\ttfamily float Main\+Glwight\+::lastypos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+鼠标上一次x坐标 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_ad1e449c551df9449fc8054a8fb05fb39}\label{class_main_glwight_ad1e449c551df9449fc8054a8fb05fb39}} 
+\index{MainGlwight@{MainGlwight}!m\_colAttr@{m\_colAttr}}
+\index{m\_colAttr@{m\_colAttr}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{m\_colAttr}{m\_colAttr}}
+{\footnotesize\ttfamily G\+Lint Main\+Glwight\+::m\+\_\+col\+Attr = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+顶点属性 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a0bd390a917aa870d8f9c5e6e553d1e7f}\label{class_main_glwight_a0bd390a917aa870d8f9c5e6e553d1e7f}} 
+\index{MainGlwight@{MainGlwight}!m\_posAttr@{m\_posAttr}}
+\index{m\_posAttr@{m\_posAttr}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{m\_posAttr}{m\_posAttr}}
+{\footnotesize\ttfamily G\+Lint Main\+Glwight\+::m\+\_\+pos\+Attr = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+纹理 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a843fcafd9a39e499adf0033573354ce3}\label{class_main_glwight_a843fcafd9a39e499adf0033573354ce3}} 
+\index{MainGlwight@{MainGlwight}!m\_texture@{m\_texture}}
+\index{m\_texture@{m\_texture}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{m\_texture}{m\_texture}}
+{\footnotesize\ttfamily G\+Luint Main\+Glwight\+::m\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+摄像头 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_aeb446111e95e40a16334cc75990ad4db}\label{class_main_glwight_aeb446111e95e40a16334cc75990ad4db}} 
+\index{MainGlwight@{MainGlwight}!mesh2print@{mesh2print}}
+\index{mesh2print@{mesh2print}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{mesh2print}{mesh2print}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_mesh}{Mesh}}$>$ Main\+Glwight\+::mesh2print}
+
+
+
+用于绘制的mesh 
+
+\mbox{\Hypertarget{class_main_glwight_a26c6cd8f8f8006950a855b5fc9847780}\label{class_main_glwight_a26c6cd8f8f8006950a855b5fc9847780}} 
+\index{MainGlwight@{MainGlwight}!model\_qt@{model\_qt}}
+\index{model\_qt@{model\_qt}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{model\_qt}{model\_qt}}
+{\footnotesize\ttfamily Q\+Matrix4x4 Main\+Glwight\+::model\+\_\+qt\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_main_glwight_a45c924720e9a185483fd40954d0e1f6e}\label{class_main_glwight_a45c924720e9a185483fd40954d0e1f6e}} 
+\index{MainGlwight@{MainGlwight}!projection\_qt@{projection\_qt}}
+\index{projection\_qt@{projection\_qt}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{projection\_qt}{projection\_qt}}
+{\footnotesize\ttfamily Q\+Matrix4x4 Main\+Glwight\+::projection\+\_\+qt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+用于传递模型矩阵 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a12176e51d0d941c9f762f09629fb757a}\label{class_main_glwight_a12176e51d0d941c9f762f09629fb757a}} 
+\index{MainGlwight@{MainGlwight}!shader@{shader}}
+\index{shader@{shader}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{shader}{shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shader}{Shader}}$\ast$ Main\+Glwight\+::shader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+摄像机 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a18cbc6f1ddb5384ad82056122d41009b}\label{class_main_glwight_a18cbc6f1ddb5384ad82056122d41009b}} 
+\index{MainGlwight@{MainGlwight}!shoot@{shoot}}
+\index{shoot@{shoot}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{shoot}{shoot}}
+{\footnotesize\ttfamily bool Main\+Glwight\+::shoot = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+用于测试 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_acf02c166e2e0295404e0bb261e0d29f5}\label{class_main_glwight_acf02c166e2e0295404e0bb261e0d29f5}} 
+\index{MainGlwight@{MainGlwight}!show\_cam@{show\_cam}}
+\index{show\_cam@{show\_cam}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{show\_cam}{show\_cam}}
+{\footnotesize\ttfamily bool Main\+Glwight\+::show\+\_\+cam = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+用于判断是否拍摄 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a335a9785c45681f6b126c052a7ff0088}\label{class_main_glwight_a335a9785c45681f6b126c052a7ff0088}} 
+\index{MainGlwight@{MainGlwight}!test@{test}}
+\index{test@{test}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{test}{test}}
+{\footnotesize\ttfamily float Main\+Glwight\+::test = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+摄像头图像的拷贝 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a562b42682b8bb893a4e9051ce825420e}\label{class_main_glwight_a562b42682b8bb893a4e9051ce825420e}} 
+\index{MainGlwight@{MainGlwight}!timer@{timer}}
+\index{timer@{timer}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily Q\+Timer$\ast$ Main\+Glwight\+::timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+着色器 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a40367f780d8b2ab46c0d0431d88cf1ef}\label{class_main_glwight_a40367f780d8b2ab46c0d0431d88cf1ef}} 
+\index{MainGlwight@{MainGlwight}!VAO@{VAO}}
+\index{VAO@{VAO}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{VAO}{VAO}}
+{\footnotesize\ttfamily Q\+Open\+G\+L\+Vertex\+Array\+Object Main\+Glwight\+::\+V\+AO}
+
+
+
+用于绘制的\+V\+AO 
+
+\mbox{\Hypertarget{class_main_glwight_a23223cd122f9564310763ba4a9a1f80c}\label{class_main_glwight_a23223cd122f9564310763ba4a9a1f80c}} 
+\index{MainGlwight@{MainGlwight}!VBO@{VBO}}
+\index{VBO@{VBO}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{VBO}{VBO}}
+{\footnotesize\ttfamily unsigned int Main\+Glwight\+::\+V\+BO}
+
+
+
+用于绘制的\+V\+BO 
+
+\mbox{\Hypertarget{class_main_glwight_ac722a8bf1ad85df0b54f26a4942cc7f5}\label{class_main_glwight_ac722a8bf1ad85df0b54f26a4942cc7f5}} 
+\index{MainGlwight@{MainGlwight}!view@{view}}
+\index{view@{view}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{view}{view}}
+{\footnotesize\ttfamily glm\+::mat4 Main\+Glwight\+::view = glm\+::mat4(1.\+0f)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+旋转角度 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_aa79023b206b5cd5ec8a8dc4844386fd9}\label{class_main_glwight_aa79023b206b5cd5ec8a8dc4844386fd9}} 
+\index{MainGlwight@{MainGlwight}!view\_qt@{view\_qt}}
+\index{view\_qt@{view\_qt}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{view\_qt}{view\_qt}}
+{\footnotesize\ttfamily Q\+Matrix4x4 Main\+Glwight\+::view\+\_\+qt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+用于传递投影矩阵 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_ac83f8216d8e5eebf0c12b99b51ea527d}\label{class_main_glwight_ac83f8216d8e5eebf0c12b99b51ea527d}} 
+\index{MainGlwight@{MainGlwight}!xpos@{xpos}}
+\index{xpos@{xpos}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{xpos}{xpos}}
+{\footnotesize\ttfamily float Main\+Glwight\+::xpos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+用于传递观察矩阵 \end{quote}
+
+
+\mbox{\Hypertarget{class_main_glwight_a15760b43cdaf657f545f7ae53c9e8619}\label{class_main_glwight_a15760b43cdaf657f545f7ae53c9e8619}} 
+\index{MainGlwight@{MainGlwight}!ypos@{ypos}}
+\index{ypos@{ypos}!MainGlwight@{MainGlwight}}
+\doxysubsubsection{\texorpdfstring{ypos}{ypos}}
+{\footnotesize\ttfamily float Main\+Glwight\+::ypos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\begin{quote}
+鼠标x坐标 \end{quote}
+
+

@@ -1,0 +1,209 @@
+\hypertarget{classfit__model}{}\doxysection{fit\+\_\+model Class Reference}
+\label{classfit__model}\index{fit\_model@{fit\_model}}
+
+
+从给定的图像和3\+D形状模型中估计3\+D形状和表情系数。  
+
+
+
+
+{\ttfamily \#include $<$fit\+\_\+model.\+h$>$}
+
+
+
+Collaboration diagram for fit\+\_\+model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfit__model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfit__model_a5cb356db49c299a1c5bea3ed013d1723}{fit\+\_\+model}} (cv\+::\+Mat image\+\_\+input)
+\begin{DoxyCompactList}\small\item\em 从给定的图像和3\+D形状模型中估计3\+D形状和表情系数。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfit__model_a51c5902893f386239a9006fe378499f8}{generate\+\_\+obj}} ()
+\begin{DoxyCompactList}\small\item\em 生成obj文件 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classfit__model_ad331ca1a82e73e272685061db81fecb9}{modelfile}} = \char`\"{}./obj\+\_\+use/sfm\+\_\+shape\+\_\+3448.\+bin\char`\"{}
+\begin{DoxyCompactList}\small\item\em 到模型文件的路径。 \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classfit__model_ae4f3398a35c9aededc3306ae4c8d6d17}{mappingsfile}} = \char`\"{}./obj\+\_\+use/ibug\+\_\+to\+\_\+sfm.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em 到模型顶点到图像点的映射文件的路径。 \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classfit__model_ad9fc4a0b385faf4bb47e2b1d7d947233}{landmarksfile}} = \char`\"{}output.\+pts\char`\"{}
+\begin{DoxyCompactList}\small\item\em 到图像中68个关键点的 .pts 文件的路径。 \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classfit__model_ab96308880b37749219405d5ac42d6a5e}{outputbasename}} = \char`\"{}./texture/out1\char`\"{}
+\begin{DoxyCompactList}\small\item\em 输出文件的基本名称。 \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classfit__model_a78537263d54f6bd3cf878747af4b7635}{contourfile}} = \char`\"{}./obj\+\_\+use/sfm\+\_\+model\+\_\+contours.\+json\char`\"{}
+\begin{DoxyCompactList}\small\item\em 到模型轮廓的 J\+S\+ON 文件的路径。 \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classfit__model_a325338115acad591a279c3d3bf0eefc7}{edgetopologyfile}} = \char`\"{}./obj\+\_\+use/sfm\+\_\+3448\+\_\+edge\+\_\+topology.\+json\char`\"{}
+\begin{DoxyCompactList}\small\item\em 到模型边缘拓扑的 J\+S\+ON 文件的路径。 \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classfit__model_aa12f00c95a920a63afc97fe4f4267ea5}{blendshapesfile}} = \char`\"{}./obj\+\_\+use/expression\+\_\+blendshapes\+\_\+3448.\+bin\char`\"{}
+\begin{DoxyCompactList}\small\item\em 到表情 blendshapes 的文件的路径。 \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classfit__model_afa9148a1ae6d88fca59c10f6724246bc}{image}}
+\begin{DoxyCompactList}\small\item\em 输入图像。 \end{DoxyCompactList}\item 
+Landmark\+Collection$<$ Eigen\+::\+Vector2f $>$ \mbox{\hyperlink{classfit__model_a21d1c78dac828b4bb188e6d9accb45e6}{landmarks}}
+\begin{DoxyCompactList}\small\item\em 从 .pts 文件加载的68个关键点。 \end{DoxyCompactList}\item 
+morphablemodel\+::\+Morphable\+Model \mbox{\hyperlink{classfit__model_adea4619b1b91d49cf9b924dc650ba0d9}{morphable\+\_\+model}}
+\begin{DoxyCompactList}\small\item\em 加载的 3D 可变形模型。 \end{DoxyCompactList}\item 
+core\+::\+Landmark\+Mapper \mbox{\hyperlink{classfit__model_a6400ec030b15ab9fe910d6a149e68321}{landmark\+\_\+mapper}}
+\begin{DoxyCompactList}\small\item\em 用于将 ibug 68点映射到模型顶点的 Landmark\+Mapper。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+从给定的图像和3\+D形状模型中估计3\+D形状和表情系数。 
+
+该应用程序演示了从图像到3d模型的相机估计和拟合。首先，从.\+pts 文件加载68个关键点，并使用\+Landmark\+Mapper将其转换为顶点索引。然后，估计一个正交相机矩阵，然后使用这个相机矩阵，将形状拟合到三维模型。 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em image} & 图像。 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfit__model_a5cb356db49c299a1c5bea3ed013d1723}\label{classfit__model_a5cb356db49c299a1c5bea3ed013d1723}} 
+\index{fit\_model@{fit\_model}!fit\_model@{fit\_model}}
+\index{fit\_model@{fit\_model}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{fit\_model()}{fit\_model()}}
+{\footnotesize\ttfamily fit\+\_\+model\+::fit\+\_\+model (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{image\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+从给定的图像和3\+D形状模型中估计3\+D形状和表情系数。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+\_\+input} & 输入图像。 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfit__model_a51c5902893f386239a9006fe378499f8}\label{classfit__model_a51c5902893f386239a9006fe378499f8}} 
+\index{fit\_model@{fit\_model}!generate\_obj@{generate\_obj}}
+\index{generate\_obj@{generate\_obj}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{generate\_obj()}{generate\_obj()}}
+{\footnotesize\ttfamily void fit\+\_\+model\+::generate\+\_\+obj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+生成obj文件 
+
+\begin{DoxyReturn}{Returns}
+生成的obj文件储存到outputbasename中 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfit__model_aa12f00c95a920a63afc97fe4f4267ea5}\label{classfit__model_aa12f00c95a920a63afc97fe4f4267ea5}} 
+\index{fit\_model@{fit\_model}!blendshapesfile@{blendshapesfile}}
+\index{blendshapesfile@{blendshapesfile}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{blendshapesfile}{blendshapesfile}}
+{\footnotesize\ttfamily string fit\+\_\+model\+::blendshapesfile = \char`\"{}./obj\+\_\+use/expression\+\_\+blendshapes\+\_\+3448.\+bin\char`\"{}}
+
+
+
+到表情 blendshapes 的文件的路径。 
+
+\mbox{\Hypertarget{classfit__model_a78537263d54f6bd3cf878747af4b7635}\label{classfit__model_a78537263d54f6bd3cf878747af4b7635}} 
+\index{fit\_model@{fit\_model}!contourfile@{contourfile}}
+\index{contourfile@{contourfile}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{contourfile}{contourfile}}
+{\footnotesize\ttfamily string fit\+\_\+model\+::contourfile = \char`\"{}./obj\+\_\+use/sfm\+\_\+model\+\_\+contours.\+json\char`\"{}}
+
+
+
+到模型轮廓的 J\+S\+ON 文件的路径。 
+
+\mbox{\Hypertarget{classfit__model_a325338115acad591a279c3d3bf0eefc7}\label{classfit__model_a325338115acad591a279c3d3bf0eefc7}} 
+\index{fit\_model@{fit\_model}!edgetopologyfile@{edgetopologyfile}}
+\index{edgetopologyfile@{edgetopologyfile}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{edgetopologyfile}{edgetopologyfile}}
+{\footnotesize\ttfamily string fit\+\_\+model\+::edgetopologyfile = \char`\"{}./obj\+\_\+use/sfm\+\_\+3448\+\_\+edge\+\_\+topology.\+json\char`\"{}}
+
+
+
+到模型边缘拓扑的 J\+S\+ON 文件的路径。 
+
+\mbox{\Hypertarget{classfit__model_afa9148a1ae6d88fca59c10f6724246bc}\label{classfit__model_afa9148a1ae6d88fca59c10f6724246bc}} 
+\index{fit\_model@{fit\_model}!image@{image}}
+\index{image@{image}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily cv\+::\+Mat fit\+\_\+model\+::image}
+
+
+
+输入图像。 
+
+\mbox{\Hypertarget{classfit__model_a6400ec030b15ab9fe910d6a149e68321}\label{classfit__model_a6400ec030b15ab9fe910d6a149e68321}} 
+\index{fit\_model@{fit\_model}!landmark\_mapper@{landmark\_mapper}}
+\index{landmark\_mapper@{landmark\_mapper}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{landmark\_mapper}{landmark\_mapper}}
+{\footnotesize\ttfamily core\+::\+Landmark\+Mapper fit\+\_\+model\+::landmark\+\_\+mapper}
+
+
+
+用于将 ibug 68点映射到模型顶点的 Landmark\+Mapper。 
+
+\mbox{\Hypertarget{classfit__model_a21d1c78dac828b4bb188e6d9accb45e6}\label{classfit__model_a21d1c78dac828b4bb188e6d9accb45e6}} 
+\index{fit\_model@{fit\_model}!landmarks@{landmarks}}
+\index{landmarks@{landmarks}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{landmarks}{landmarks}}
+{\footnotesize\ttfamily Landmark\+Collection$<$Eigen\+::\+Vector2f$>$ fit\+\_\+model\+::landmarks}
+
+
+
+从 .pts 文件加载的68个关键点。 
+
+\mbox{\Hypertarget{classfit__model_ad9fc4a0b385faf4bb47e2b1d7d947233}\label{classfit__model_ad9fc4a0b385faf4bb47e2b1d7d947233}} 
+\index{fit\_model@{fit\_model}!landmarksfile@{landmarksfile}}
+\index{landmarksfile@{landmarksfile}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{landmarksfile}{landmarksfile}}
+{\footnotesize\ttfamily string fit\+\_\+model\+::landmarksfile = \char`\"{}output.\+pts\char`\"{}}
+
+
+
+到图像中68个关键点的 .pts 文件的路径。 
+
+\mbox{\Hypertarget{classfit__model_ae4f3398a35c9aededc3306ae4c8d6d17}\label{classfit__model_ae4f3398a35c9aededc3306ae4c8d6d17}} 
+\index{fit\_model@{fit\_model}!mappingsfile@{mappingsfile}}
+\index{mappingsfile@{mappingsfile}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{mappingsfile}{mappingsfile}}
+{\footnotesize\ttfamily string fit\+\_\+model\+::mappingsfile = \char`\"{}./obj\+\_\+use/ibug\+\_\+to\+\_\+sfm.\+txt\char`\"{}}
+
+
+
+到模型顶点到图像点的映射文件的路径。 
+
+\mbox{\Hypertarget{classfit__model_ad331ca1a82e73e272685061db81fecb9}\label{classfit__model_ad331ca1a82e73e272685061db81fecb9}} 
+\index{fit\_model@{fit\_model}!modelfile@{modelfile}}
+\index{modelfile@{modelfile}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{modelfile}{modelfile}}
+{\footnotesize\ttfamily string fit\+\_\+model\+::modelfile = \char`\"{}./obj\+\_\+use/sfm\+\_\+shape\+\_\+3448.\+bin\char`\"{}}
+
+
+
+到模型文件的路径。 
+
+\mbox{\Hypertarget{classfit__model_adea4619b1b91d49cf9b924dc650ba0d9}\label{classfit__model_adea4619b1b91d49cf9b924dc650ba0d9}} 
+\index{fit\_model@{fit\_model}!morphable\_model@{morphable\_model}}
+\index{morphable\_model@{morphable\_model}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{morphable\_model}{morphable\_model}}
+{\footnotesize\ttfamily morphablemodel\+::\+Morphable\+Model fit\+\_\+model\+::morphable\+\_\+model}
+
+
+
+加载的 3D 可变形模型。 
+
+\mbox{\Hypertarget{classfit__model_ab96308880b37749219405d5ac42d6a5e}\label{classfit__model_ab96308880b37749219405d5ac42d6a5e}} 
+\index{fit\_model@{fit\_model}!outputbasename@{outputbasename}}
+\index{outputbasename@{outputbasename}!fit\_model@{fit\_model}}
+\doxysubsubsection{\texorpdfstring{outputbasename}{outputbasename}}
+{\footnotesize\ttfamily string fit\+\_\+model\+::outputbasename = \char`\"{}./texture/out1\char`\"{}}
+
+
+
+输出文件的基本名称。 
+

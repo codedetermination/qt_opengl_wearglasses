@@ -15,13 +15,23 @@
 using namespace std ;
 using namespace dlib;
 
+/// @brief 从给定的图像之中估计出68个关键点。
+/// 从给定的图像之中估计出68个关键点储存到pts文件中，并且返回一个Mat类型的图像，其中包含了68个关键点。
+/// @param image 输入图像。
+/// @param ptsfile 保存68个关键点的文件名。
+/// @return 返回一个Mat类型的图像，其中包含了68个关键点。
 
 class points_68{
 public:
+    /// @brief  构造函数，初始化图像。
+    /// @param img1 
     points_68(cv::Mat img1) : image(img1){
 
     }
-    cv::Mat image;
+    cv::Mat image; ///< 输入图像
+    /// @brief  主要的函数，从给定的图像之中估计出68个关键点，并且把68个关键点储存到pts文件中。
+    /// @param ptsfile 保存68个关键点的文件名。
+    /// @return 返回一个Mat类型的图像，其中包含了68个关键点。
     cv::Mat return_image(){
         cv::Mat img = image;
         if (img.empty())

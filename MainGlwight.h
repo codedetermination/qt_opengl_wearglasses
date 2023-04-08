@@ -20,13 +20,20 @@
 
 #include <filesystem>
 
-
-
-
+/// OpenGL窗口自定义窗口类
+///
+/// OpenGL窗口自定义窗口类，继承自QOpenGLWidget,完成了OpenGL窗口的初始化，绘制，更新等操作，实现了鼠标键盘事件的响应，实现了定时器的功能，并且实现了对于2dtexture和3d模型的加载，绘制，更新等操作
+/// @see QOpenGLWidget
 
 class MainGlwight : public QOpenGLWidget, protected QOpenGLFunctions {
     Q_OBJECT
 public:
+    /// @brief  构造函数
+    /// makeCurrent()函数用于将当前的OpenGL上下文设置为当前窗口的上下文，这样才能在当前窗口中进行OpenGL操作
+    /// @param  parent  父窗口
+    /// @see    QOpenGLWidget
+    /// @see    QOpenGLFunctions
+
     MainGlwight(QWidget* parent = nullptr)
         : QOpenGLWidget(parent)
     {
@@ -36,21 +43,30 @@ public:
        makeCurrent();
 
     }
+    /// @brief  析构函数
+    
 ~MainGlwight()
     {
         makeCurrent();
         //connect(this, SIGNAL(destroyed()), timer, SLOT(stop()));  // 窗口关闭时触发停止定时器
         delete shader;
+        
         //delete m_texture;
     }
 public :
-    std::vector<Mesh> mesh2print;
-    points_68* keypointface;
-    QOpenGLVertexArrayObject VAO;
-    unsigned int VBO, EBO;
+    std::vector<Mesh> mesh2print; ///< 用于绘制的mesh
+    points_68* keypointface; ///< 用于绘制的关键点
+    QOpenGLVertexArrayObject VAO; ///< 用于绘制的VAO
+    unsigned int VBO; ///< 用于绘制的VBO
+    unsigned int EBO; ///< EBO
+    /// 调用用来更新Opengl显示窗口的函数
+    /// @see    update()
     void update_scence(){
         update();
     }
+    /// @brief  初始化Mesh，用于绑定VAO，VBO，EBO，设置顶点属性指针
+    /// @param vertices  顶点数据
+    /// @param indices  顶点索引数据
     void setupMesh(std::vector<Vertex> vertices,std::vector<unsigned int>indices)
             //std::vector<Vertex> vertices,std::vector<unsigned int>indices)
     {
@@ -85,6 +101,10 @@ public :
 
 
     }
+    /// @brief  绘制Mesh的函数
+    /// 循环绘制Mesh中的每个纹理，绑定纹理，设置纹理单元，绘制Mesh
+    /// @param textures  纹理
+    /// @param indices  顶点索引数据
     void Draw(std::vector<Texture> textures,std::vector<unsigned int>indices)
     {
 
@@ -113,6 +133,11 @@ public :
 
 
 protected:
+    /// @brief  初始化OpenGL窗口
+    /// 初始化OpenGL窗口，设置OpenGL的一些参数，如背景颜色，着色模式，深度测试，纹理等
+    /// @see    initializeGL()  
+    /// @see    paintGL()
+    /// @see    resizeGL()
     void initializeGL() override
     {
         cap = cv::VideoCapture();
@@ -133,7 +158,10 @@ protected:
         VAO.create();
         //Model ourModel("resources/objects/backpack/backpack.obj");
     }
-
+    /// @brief  绘制OpenGL窗口
+    /// 绘制OpenGL窗口，绘制Mesh，绘制关键点
+    /// @see    initializeGL()
+    /// @see    paintGL()
     void paintGL() override
     {
 
@@ -479,11 +507,16 @@ protected:
 
 
     }
-
+    /// @brief  改变窗口大小
+    /// @param w 
+    /// @param h 
     void resizeGL(int w, int h) override
     {
         glViewport(0, 0, w, h);
     }
+    /// @brief  鼠标事件
+    /// 用于固定鼠标位置，实现鼠标移动
+    /// @param event  鼠标事件
 
     void mousePressEvent(QMouseEvent *event) override{
         if(event->button() == Qt::LeftButton && show_cam == false){
@@ -495,7 +528,9 @@ protected:
         }
         std::cout<< "press" << std::endl;
     }
-
+    /// @brief  鼠标移动事件
+    /// 用于控制opengl中摄像机，实现移动
+    /// @param event  鼠标移动事件
     void mouseMoveEvent(QMouseEvent *event) override{
         if(!show_cam){
             xpos = event->globalPosition().x() - lastxpos;
@@ -508,6 +543,9 @@ protected:
         }
         //std::cout<< "move" << lastxpos << lastypos << std::endl;
     }
+    /// @brief  鼠标释放事件
+    /// 用于还原鼠标位置，实现鼠标移动
+    /// @param event  鼠标释放事件
 
     void mouseReleaseEvent(QMouseEvent *event) override{
         if(event->button() == Qt::LeftButton && show_cam == false){
@@ -516,27 +554,36 @@ protected:
         }
     }
 public:
+    /// 传递摄像头图像
+    /// shoot为false，表示拍摄完成，不再拍摄
     void shoot_image(){
         cap >> image;
         shoot = false;
     }
-
+    /// @brief 重新拍摄
+    /// shoot为true，表示重新拍摄
     void reshoot(){
         cap >> image;
         shoot = true;
     }
-
+    /// @brief  显示摄像头图像
+    /// show_cam为true，表示显示摄像头图像
     void show_camera(){
         show_cam = false;
         image_cpy = image.clone();
     }
-
+    /// @brief  隐藏摄像头图像
+    /// show_cam为false，表示隐藏摄像头图像
     void reshow_camera(){
         show_cam = true;
     }
+    /// @brief  获取摄像头图像
+    /// @return  摄像头图像
     cv::Mat get_image(){
         return image_cpy;
     }
+    /// 进行68个人脸关键点检测
+    /// @return  是否检测成功
     bool setup_points68(){
         keypointface = new points_68(image);
 
@@ -547,28 +594,28 @@ public:
 
 
 private:
-    //QOpenGLTexture* texture = new QOpenGLTexture(QOpenGLTexture::Target2D);
-//    QOpenGLShaderProgram* shader;
-    QMatrix4x4 model_qt;
-    QMatrix4x4 projection_qt;
-    QMatrix4x4 view_qt ;
 
-    float xpos,ypos,lastxpos,lastypos,angle = 0.0f ;
-    glm::mat4 view = glm::mat4(1.0f);
-
-    Camera* camera;
-    Shader* shader;
-    QTimer* timer;
-    cv::VideoCapture cap;
-    GLuint m_texture;
-    GLint m_posAttr = 0;
-    GLint m_colAttr = 0;
-    cv::Mat image;
-    cv::Mat image_cpy;
-
-    float test = 0;
-    bool shoot = true;
-    bool show_cam = true;
+    QMatrix4x4 model_qt; ///> 用于传递模型矩阵
+    QMatrix4x4 projection_qt; ///> 用于传递投影矩阵
+    QMatrix4x4 view_qt ; ///> 用于传递观察矩阵
+    float xpos; ///> 鼠标x坐标
+    float ypos; ///> 鼠标y坐标
+    float lastxpos; ///> 鼠标上一次x坐标
+    float lastypos; ///> 鼠标上一次y坐标
+    float angle = 0.0f ;  ///> 旋转角度
+    glm::mat4 view = glm::mat4(1.0f); ///> 观察矩阵
+    Camera* camera; ///> 摄像机
+    Shader* shader; ///> 着色器
+    QTimer* timer;  ///> 定时器
+    cv::VideoCapture cap; ///> 摄像头
+    GLuint m_texture; ///> 纹理
+    GLint m_posAttr = 0; ///> 顶点属性
+    GLint m_colAttr = 0; ///> 颜色属性
+    cv::Mat image; ///> 摄像头图像
+    cv::Mat image_cpy; ///> 摄像头图像的拷贝
+    float test = 0; ///> 用于测试
+    bool shoot = true; ///> 用于判断是否拍摄
+    bool show_cam = true; ///> 用于判断是否显示摄像头图像
 
 };
 

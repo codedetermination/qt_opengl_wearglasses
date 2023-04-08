@@ -1,0 +1,4 @@
+<map id="MainWindow" name="MainWindow">
+<area shape="rect" id="node1" title="主窗口类 生成主要的窗口，包括摄像头显示，人脸检测，人脸关键点检测，人脸模型拟合" alt="" coords="10,80,117,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,121,32"/>
+</map>

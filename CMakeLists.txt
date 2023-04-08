@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.11)
-
-project(wearglasses1_obj VERSION 0.1 LANGUAGES CXX)
+project(qt_opengl_wearglasses VERSION 0.1 LANGUAGES CXX)
 set(texture_dir ${CMAKE_BINARY_DIR}/texture)
 file(COPY ${CMAKE_SOURCE_DIR}/shape_predictor_68_face_landmarks.dat DESTINATION ${CMAKE_BINARY_DIR})
 file(COPY ${CMAKE_SOURCE_DIR}/shader.vs DESTINATION ${CMAKE_BINARY_DIR})
@@ -10,6 +9,7 @@ file(COPY ${CMAKE_SOURCE_DIR}/obj_use DESTINATION ${CMAKE_BINARY_DIR})
 file(COPY ${CMAKE_SOURCE_DIR}/texture/out.obj DESTINATION ${CMAKE_BINARY_DIR}/texture)
 file(COPY ${CMAKE_SOURCE_DIR}/texture/out.texture.png DESTINATION ${CMAKE_BINARY_DIR}/texture)
 file(COPY ${CMAKE_SOURCE_DIR}/texture/out.mtl DESTINATION ${CMAKE_BINARY_DIR}/texture)
+file(COPY ${CMAKE_SOURCE_DIR}/texture DESTINATION ${CMAKE_BINARY_DIR})
 
 
 set(CMAKE_AUTOUIC ON)
@@ -62,7 +62,7 @@ set(PROJECT_SOURCES
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(wearglasses1_obj
+    qt_add_executable(qt_opengl_wearglasses
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
@@ -72,19 +72,19 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
-        add_library(wearglasses1_obj SHARED
+        add_library(qt_opengl_wearglasses SHARED
             ${PROJECT_SOURCES}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-        add_executable(wearglasses1_obj
+        add_executable(qt_opengl_wearglasses
             ${PROJECT_SOURCES}
         )
     endif()
 endif()
 
-target_link_libraries(wearglasses1_obj PRIVATE
+target_link_libraries(qt_opengl_wearglasses PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Core
     Qt${QT_VERSION_MAJOR}::Gui
@@ -97,7 +97,7 @@ target_link_libraries(wearglasses1_obj PRIVATE
     fit_model
 )
 
-set_target_properties(wearglasses1_obj PROPERTIES
+set_target_properties(qt_opengl_wearglasses PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -105,12 +105,12 @@ set_target_properties(wearglasses1_obj PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-install(TARGETS wearglasses1_obj
+install(TARGETS qt_opengl_wearglasses
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(wearglasses1_obj)
+    qt_finalize_executable(qt_opengl_wearglasses)
 endif()
 # set(MY_VAR "${CMAKE_SOURCE_DIR}")
 message(STATUS "CMAKE_SOURCE_DIR is ${CMAKE_SOURCE_DIR}")

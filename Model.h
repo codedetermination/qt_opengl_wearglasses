@@ -25,6 +25,9 @@
 using namespace std;
 #define MAX_BONE_INFLUENCE 4
 
+/// @brief  顶点结构体
+/// @param  Position    顶点位置
+/// @param  TexCoords   顶点纹理坐标
 struct Vertex {
     // position
     float Position[3];
@@ -41,18 +44,31 @@ struct Vertex {
 //    //weights from each bone
 //    float m_Weights[MAX_BONE_INFLUENCE];
 };
-
+/// @brief 纹理结构体
+/// @param id           纹理id
+/// @param type         纹理类型
+/// @param path         纹理路径
 struct Texture {
     unsigned int id;
     string type;
     string path;
 };
 
+/// @brief  网格结构体
+/// @param  vertices    顶点数组
+/// @param  indices     顶点索引数组
+/// @param  textures    纹理数组
+
 struct Mesh{
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Texture> textures;
 };
+
+/// @brief  从png文件中加载纹理
+/// 从文件中加载纹理，支持png格式，返回纹理id，纹理类型，纹理路径，纹理宽度，纹理高度，纹理通道数，纹理数据，纹理格式，纹理过滤方式，纹理环绕方式等
+/// @param  path        纹理路径
+/// @param  directory   纹理所在目录
 
 inline
 GLuint TextureFromFile1(const char *path, const string &directory)
@@ -97,22 +113,34 @@ GLuint TextureFromFile1(const char *path, const string &directory)
     return  texture->textureId();
 }
 
+/// @brief  模型类
+/// 模型类，用于加载模型，绘制模型，加载纹理等
+/// @param  path        模型路径
+/// @param  directory   模型所在目录
+/// @param  gamma       是否开启gamma校正
+
 class Model
 {
 public:
-    std::vector<Texture> textures_loaded;	// stores all the textures loaded so far, optimization to make sure textures aren't loaded more than once.
-    string directory;
-    Shader* shader;
-    std::vector<Mesh> meshvector;
-    bool gammaCorrection;
+    std::vector<Texture> textures_loaded;	///> 已加载的纹理
+    string directory;                      ///> 模型所在目录
+    Shader* shader;                       ///> 着色器
+    std::vector<Mesh> meshvector;         ///> 网格数组
+    bool gammaCorrection;                ///> 是否开启gamma校正
 
-    // constructor, expects a filepath to a 3D model.
+    /// @brief  模型构造函数
+    /// 模型构造函数，用于加载模型,并初始化模型,加载纹理等,并将模型的网格数组返回,用于绘制模型。
+    /// @param path       模型路径
+    /// @param sha      着色器
+    /// @param gamma    是否开启gamma校正
     Model(string const &path,Shader* sha,bool gamma = false) : gammaCorrection(gamma) ,shader(sha)
     {
         //makeCurrent();
         loadModel(path);
 
     }
+    /// @brief 返回模型的网格数组
+    /// @return  网格数组
     std::vector<Mesh> returnmesh(){
         return this->meshvector;
     }
@@ -121,6 +149,9 @@ public:
 
 private:
     // loads a model with supported ASSIMP extensions from file and stores the resulting meshes in the meshes vector.
+    /// @brief  加载模型
+    /// 从路径加载模型,并初始化模型,加载纹理等,并将模型的网格数组返回,用于绘制模型。
+    /// @param path       模型路径
     void loadModel(string const &path)
     {
         // read file via ASSIMP
@@ -140,6 +171,11 @@ private:
     }
 
     // processes a node in a recursive fashion. Processes each individual mesh located at the node and repeats this process on its children nodes (if any).
+    /// @brief  处理节点
+    /// 处理节点,递归处理节点,并将节点的网格数组返回,用于绘制模型。
+    /// @param node       节点
+    /// @param scene      场景
+
     void processNode(aiNode *node, const aiScene *scene)
     {
         // process each mesh located at the current node
@@ -158,7 +194,10 @@ private:
         }
 
     }
-
+   /// @brief 处理网格
+   /// 处理网格,并将网格的顶点数组返回,用于绘制模型。
+   /// @param mesh  网格
+   /// @param scene 场景
    void processMesh(aiMesh *mesh, const aiScene *scene)
     {
         // data to fill
@@ -231,6 +270,12 @@ private:
 
     // checks all material textures of a given type and loads the textures if they're not loaded yet.
     // the required info is returned as a Texture struct.
+    /// @brief  加载材质纹理
+    /// 加载材质纹理,并将纹理的路径返回,用于绘制模型。
+    /// @param mat 材质
+    /// @param type 纹理类型
+    /// @param typeName 纹理类型名称
+    /// @return 纹理路径
     std::vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName)
     {
         std::vector<Texture> textures;

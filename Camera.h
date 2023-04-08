@@ -8,8 +8,9 @@
 #include <QOpenGLFunctions>
 #include <QOpenGLExtraFunctions>
 
-
-// Defines several possible options for camera movement. Used as abstraction to stay away from window-system specific input methods
+/// 定义了相机的移动选项
+///
+/// 定义相机移动的几个可能选项。 用作抽象以远离窗口系统特定的输入法
 enum Camera_Movement {
     FORWARD,
     BACKWARD,
@@ -24,25 +25,31 @@ const float SPEED       =  2.5f;
 const float SENSITIVITY =  0.1f;
 const float ZOOM        =  45.0f;
 
+/// 相机类
+///
+/// 一个自由移动的相机类，可以在场景中自由移动
 
 class Camera
 {
 public:
-    // camera Attributes
-    glm::vec3 Position;
-    glm::vec3 Front;
-    glm::vec3 Up;
-    glm::vec3 Right;
-    glm::vec3 WorldUp;
-    // euler Angles
-    float Yaw;
-    float Pitch;
-    // camera options
-    float MovementSpeed;
-    float MouseSensitivity = 0.1;
-    float Zoom;
+    glm::vec3 Position; ///< 相机位置
+    glm::vec3 Front;    ///< 相机前方向
+    glm::vec3 Up;       ///< 相机上方向
+    glm::vec3 Right;    ///< 相机右方向
+    glm::vec3 WorldUp;  ///< 相机世界坐标系中的上方向
+    
+    float Yaw;          ///< 相机偏航角
+    float Pitch;        ///< 相机俯仰角
+    
+    float MovementSpeed;                ///< 相机移动速度
+    float MouseSensitivity = 0.1;       ///< 相机鼠标灵敏度
+    float Zoom;                         ///< 相机缩放
 
-    // constructor with vectors
+    /// @brief 相机类的构造函数
+    /// @param position    相机位置
+    /// @param up          相机上方向
+    /// @param yaw         相机偏航角
+    /// @param pitch       相机俯仰角
     Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM)
     {
         Position = position;
@@ -51,7 +58,15 @@ public:
         Pitch = pitch;
         updateCameraVectors();
     }
-    // constructor with scalar values
+    /// @brief 相机类的构造函数
+    /// @param posX 相机位置x
+    /// @param posY 相机位置y
+    /// @param posZ 相机位置z 
+    /// @param upX  相机上方向x
+    /// @param upY  相机上方向y
+    /// @param upZ  相机上方向z
+    /// @param yaw  相机偏航角
+    /// @param pitch  相机俯仰角
     Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM)
     {
         Position = glm::vec3(posX, posY, posZ);
@@ -61,12 +76,16 @@ public:
         updateCameraVectors();
     }
 
-    // returns the view matrix calculated using Euler Angles and the LookAt Matrix
+    /// @brief 返回相机的观察矩阵
+    ///
+    /// @return  返回相机的观察矩阵
     glm::mat4 GetViewMatrix()
     {
         return glm::lookAt(Position, Position + Front, Up);
     }
-
+    /// @brief  返回指定格式的相机的观察矩阵
+    ///
+    /// @return  返回指定格式的相机的观察矩阵
     QMatrix4x4 GetViewMatrix_Qt(){
         QMatrix4x4 matrix4_4;
         glm::mat4 tmp = glm::lookAt(Position, Position + Front, Up);
@@ -98,7 +117,10 @@ public:
 
     }
 
-    // processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
+    
+    /// @brief 处理键盘输入
+    /// @param direction  相机移动方向
+    /// @param deltaTime  相机移动时间
     void ProcessKeyboard(Camera_Movement direction, float deltaTime)
     {
         float velocity = MovementSpeed * deltaTime;
@@ -114,7 +136,10 @@ public:
 
 
 
-    // processes input received from a mouse input system. Expects the offset value in both the x and y direction.
+    /// @brief  处理鼠标输入
+    /// @param xoffset 
+    /// @param yoffset 
+    /// @param constrainPitch 
     void ProcessMouseMovement(float xoffset, float yoffset, GLboolean constrainPitch = true)
     {
         xoffset *= MouseSensitivity;
@@ -136,7 +161,8 @@ public:
         updateCameraVectors();
     }
 
-    // processes input received from a mouse scroll-wheel event. Only requires input on the vertical wheel-axis
+    /// @brief  处理鼠标滚轮输入
+    /// @param yoffset 
     void ProcessMouseScroll(float yoffset)
     {
         Zoom -= (float)yoffset;
@@ -148,6 +174,7 @@ public:
 
 private:
     // calculates the front vector from the Camera's (updated) Euler Angles
+    /// @brief  更新相机的方向向量
     void updateCameraVectors()
     {
         // calculate the new Front vector

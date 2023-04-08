@@ -56,32 +56,30 @@ using std::endl;
 using std::string;
 using std::vector;
 
-/**
- * This app demonstrates estimation of the camera and fitting of the shape
- * model of a 3D Morphable Model from an ibug LFPW image with its landmarks.
- *
- * First, the 68 ibug landmarks are loaded from the .pts file and converted
- * to vertex indices using the LandmarkMapper. Then, an orthographic camera
- * is estimated, and then, using this camera matrix, the shape is fitted
- * to the landmarks.
- */
+
+/// 从给定的图像和3D形状模型中估计3D形状和表情系数。
+///
+/// 该应用程序演示了从图像到3d模型的相机估计和拟合。首先，从.pts 文件加载68个关键点，并使用LandmarkMapper将其转换为顶点索引。然后，估计一个正交相机矩阵，然后使用这个相机矩阵，将形状拟合到三维模型。
+/// @param[in] image 图像。
 
 class fit_model{
 public:
    //string modelfile, imagefile, landmarksfile, mappingsfile, outputbasename;
-    string modelfile = "./obj_use/sfm_shape_3448.bin";
-    string mappingsfile = "./obj_use/ibug_to_sfm.txt";
-    string landmarksfile = "output.pts";
-    string outputbasename = "./texture/out1";
-    string contourfile = "./obj_use/sfm_model_contours.json";
-    string edgetopologyfile = "./obj_use/sfm_3448_edge_topology.json";
-    string blendshapesfile = "./obj_use/expression_blendshapes_3448.bin";
-    cv::Mat image;
-    LandmarkCollection<Eigen::Vector2f> landmarks;
-    morphablemodel::MorphableModel morphable_model;
-    core::LandmarkMapper landmark_mapper;
+    
+    string modelfile = "./obj_use/sfm_shape_3448.bin"; ///< 到模型文件的路径。
+    string mappingsfile = "./obj_use/ibug_to_sfm.txt"; ///< 到模型顶点到图像点的映射文件的路径。
+    string landmarksfile = "output.pts"; ///< 到图像中68个关键点的 .pts 文件的路径。
+    string outputbasename = "./texture/out1"; ///< 输出文件的基本名称。
+    string contourfile = "./obj_use/sfm_model_contours.json"; ///< 到模型轮廓的 JSON 文件的路径。
+    string edgetopologyfile = "./obj_use/sfm_3448_edge_topology.json"; ///< 到模型边缘拓扑的 JSON 文件的路径。
+    string blendshapesfile = "./obj_use/expression_blendshapes_3448.bin"; ///< 到表情 blendshapes 的文件的路径。
+    cv::Mat image; ///< 输入图像。
+    LandmarkCollection<Eigen::Vector2f> landmarks; ///< 从 .pts 文件加载的68个关键点。
+    morphablemodel::MorphableModel morphable_model; ///< 加载的 3D 可变形模型。
+    core::LandmarkMapper landmark_mapper; ///< 用于将 ibug 68点映射到模型顶点的 LandmarkMapper。
 
-
+    /// @brief  从给定的图像和3D形状模型中估计3D形状和表情系数。
+    /// @param image_input  输入图像。
     fit_model(cv::Mat image_input) : image(image_input){
         //cv::imshow("input",image_input);
         cv::waitKey(0);
@@ -114,6 +112,8 @@ public:
         }
 
     }
+    /// 生成obj文件
+    /// @return 生成的obj文件储存到outputbasename中
     void generate_obj(){
         const std::vector<morphablemodel::Blendshape> blendshapes = morphablemodel::load_blendshapes(blendshapesfile);
 

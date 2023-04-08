@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node2" href="$class_main_window.html" title="主窗口类 生成主要的窗口，包括摄像头显示，人脸检测，人脸关键点检测，人脸模型拟合" alt="" coords="169,5,276,32"/>
+</map>

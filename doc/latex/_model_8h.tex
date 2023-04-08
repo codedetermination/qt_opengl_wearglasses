@@ -1,0 +1,80 @@
+\hypertarget{_model_8h}{}\doxysection{/home/guoyi/\+Desktop/shejigame/qt\+\_\+opengl\+\_\+wearglasses/\+Model.h File Reference}
+\label{_model_8h}\index{/home/guoyi/Desktop/shejigame/qt\_opengl\_wearglasses/Model.h@{/home/guoyi/Desktop/shejigame/qt\_opengl\_wearglasses/Model.h}}
+{\ttfamily \#include $<$Q\+Open\+G\+L\+Functions$>$}\newline
+{\ttfamily \#include $<$Q\+Open\+G\+L\+Extra\+Functions$>$}\newline
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/matrix\+\_\+transform.\+hpp$>$}\newline
+{\ttfamily \#include $<$assimp/\+Importer.\+hpp$>$}\newline
+{\ttfamily \#include $<$assimp/scene.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/postprocess.\+h$>$}\newline
+{\ttfamily \#include $<$Shader.\+h$>$}\newline
+{\ttfamily \#include $<$opencv4/opencv2/opencv.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+Include dependency graph for Model.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_model_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{_model_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_vertex}{Vertex}}
+\begin{DoxyCompactList}\small\item\em 顶点结构体 \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_texture}{Texture}}
+\begin{DoxyCompactList}\small\item\em 纹理结构体 \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_mesh}{Mesh}}
+\begin{DoxyCompactList}\small\item\em 网格结构体 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_model}{Model}}
+\begin{DoxyCompactList}\small\item\em 模型类 模型类，用于加载模型，绘制模型，加载纹理等 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_model_8h_a727516f3c023a19677eba7926d3bd7ce}{M\+A\+X\+\_\+\+B\+O\+N\+E\+\_\+\+I\+N\+F\+L\+U\+E\+N\+CE}}~4
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \mbox{\hyperlink{_model_8h_afe124508c88e30a97f7bf585c358d797}{Texture\+From\+File1}} (const char $\ast$path, const string \&directory)
+\begin{DoxyCompactList}\small\item\em 从png文件中加载纹理 从文件中加载纹理，支持png格式，返回纹理id，纹理类型，纹理路径，纹理宽度，纹理高度，纹理通道数，纹理数据，纹理格式，纹理过滤方式，纹理环绕方式等 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_model_8h_a727516f3c023a19677eba7926d3bd7ce}\label{_model_8h_a727516f3c023a19677eba7926d3bd7ce}} 
+\index{Model.h@{Model.h}!MAX\_BONE\_INFLUENCE@{MAX\_BONE\_INFLUENCE}}
+\index{MAX\_BONE\_INFLUENCE@{MAX\_BONE\_INFLUENCE}!Model.h@{Model.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_BONE\_INFLUENCE}{MAX\_BONE\_INFLUENCE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+B\+O\+N\+E\+\_\+\+I\+N\+F\+L\+U\+E\+N\+CE~4}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_model_8h_afe124508c88e30a97f7bf585c358d797}\label{_model_8h_afe124508c88e30a97f7bf585c358d797}} 
+\index{Model.h@{Model.h}!TextureFromFile1@{TextureFromFile1}}
+\index{TextureFromFile1@{TextureFromFile1}!Model.h@{Model.h}}
+\doxysubsubsection{\texorpdfstring{TextureFromFile1()}{TextureFromFile1()}}
+{\footnotesize\ttfamily G\+Luint Texture\+From\+File1 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{const string \&}]{directory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+从png文件中加载纹理 从文件中加载纹理，支持png格式，返回纹理id，纹理类型，纹理路径，纹理宽度，纹理高度，纹理通道数，纹理数据，纹理格式，纹理过滤方式，纹理环绕方式等 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & 纹理路径 \\
+\hline
+{\em directory} & 纹理所在目录 \\
+\hline
+\end{DoxyParams}

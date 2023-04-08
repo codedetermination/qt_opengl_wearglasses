@@ -1,0 +1,327 @@
+\hypertarget{class_camera}{}\doxysection{Camera Class Reference}
+\label{class_camera}\index{Camera@{Camera}}
+
+
+相机类  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_adad6423186f3d7e4c461cff7274f2c87}{Camera}} (glm\+::vec3 position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 up=glm\+::vec3(0.\+0f, 1.\+0f, 0.\+0f), float yaw=\mbox{\hyperlink{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}{Y\+AW}}, float pitch=\mbox{\hyperlink{_camera_8h_ab32939bf039c742431f67a815575ed21}{P\+I\+T\+CH}})
+\begin{DoxyCompactList}\small\item\em 相机类的构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_camera_a3537fd723fdfb5fed73a084346270cf6}{Camera}} (float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch)
+\begin{DoxyCompactList}\small\item\em 相机类的构造函数 \end{DoxyCompactList}\item 
+glm\+::mat4 \mbox{\hyperlink{class_camera_affa333055635aed96518c4c66be9a70c}{Get\+View\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em 返回相机的观察矩阵 \end{DoxyCompactList}\item 
+Q\+Matrix4x4 \mbox{\hyperlink{class_camera_aeb4182fdf760f5aa8a27ae6df914596b}{Get\+View\+Matrix\+\_\+\+Qt}} ()
+\begin{DoxyCompactList}\small\item\em 返回指定格式的相机的观察矩阵 \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{class_camera_af6712cab8c01e67c049f88d863f9d9bf}{Transform2\+Qt}} (T1 \&glmdata, T2 \&qtdata, int length, bool isvector)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{class_camera_a55d3bb090e071873ebff1f39e1986187}{Transform2\+Qt}} (T1 \&glmdata, T2 \&qtdata, int length)
+\item 
+void \mbox{\hyperlink{class_camera_aebba33a8b281fe2598bcafc54a55d296}{Process\+Keyboard}} (\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{Camera\+\_\+\+Movement}} direction, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em 处理键盘输入 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a656c2a8dc40150874f15bce47b789751}{Process\+Mouse\+Movement}} (float xoffset, float yoffset, G\+Lboolean constrain\+Pitch=true)
+\begin{DoxyCompactList}\small\item\em 处理鼠标输入 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a05d150f7dc98940d2dd62f686cc2efe3}{Process\+Mouse\+Scroll}} (float yoffset)
+\begin{DoxyCompactList}\small\item\em 处理鼠标滚轮输入 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_a9733b59f5340f6f1bca24d52a6679039}{Position}}
+\begin{DoxyCompactList}\small\item\em 相机位置 \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_ac95b3737115ffe9a6ff9128344d5b963}{Front}}
+\begin{DoxyCompactList}\small\item\em 相机前方向 \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_ad74c4a490bc8865e67e27a2036d0a72d}{Up}}
+\begin{DoxyCompactList}\small\item\em 相机上方向 \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_a6624f9f4228f6299a3d4ccb81e28da0a}{Right}}
+\begin{DoxyCompactList}\small\item\em 相机右方向 \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_a340d30b833954b87fd016ce0e724c723}{World\+Up}}
+\begin{DoxyCompactList}\small\item\em 相机世界坐标系中的上方向 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_a1a1354a2bd2df7f18ef82924e671d241}{Yaw}}
+\begin{DoxyCompactList}\small\item\em 相机偏航角 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_af9c8f223bb06bb74fc77c586545e7e67}{Pitch}}
+\begin{DoxyCompactList}\small\item\em 相机俯仰角 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_a63221392d762df6a74f45bc9d43a2f61}{Movement\+Speed}}
+\begin{DoxyCompactList}\small\item\em 相机移动速度 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_a73e88844b31d5111eeb76327dfbb2d68}{Mouse\+Sensitivity}} = 0.\+1
+\begin{DoxyCompactList}\small\item\em 相机鼠标灵敏度 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_a2becf27d08eb7e6da9c597c73ea95b5d}{Zoom}}
+\begin{DoxyCompactList}\small\item\em 相机缩放 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_camera_ad424b8b92e580508caf21337b69b93fa}{update\+Camera\+Vectors}} ()
+\begin{DoxyCompactList}\small\item\em 更新相机的方向向量 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+相机类 
+
+一个自由移动的相机类，可以在场景中自由移动 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_camera_adad6423186f3d7e4c461cff7274f2c87}\label{class_camera_adad6423186f3d7e4c461cff7274f2c87}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{up = {\ttfamily glm\+:\+:vec3(0.0f,~1.0f,~0.0f)},  }\item[{float}]{yaw = {\ttfamily \mbox{\hyperlink{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}{Y\+AW}}},  }\item[{float}]{pitch = {\ttfamily \mbox{\hyperlink{_camera_8h_ab32939bf039c742431f67a815575ed21}{P\+I\+T\+CH}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+相机类的构造函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & 相机位置 \\
+\hline
+{\em up} & 相机上方向 \\
+\hline
+{\em yaw} & 相机偏航角 \\
+\hline
+{\em pitch} & 相机俯仰角 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_camera_a3537fd723fdfb5fed73a084346270cf6}\label{class_camera_a3537fd723fdfb5fed73a084346270cf6}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{posZ,  }\item[{float}]{upX,  }\item[{float}]{upY,  }\item[{float}]{upZ,  }\item[{float}]{yaw,  }\item[{float}]{pitch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+相机类的构造函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em posX} & 相机位置x \\
+\hline
+{\em posY} & 相机位置y \\
+\hline
+{\em posZ} & 相机位置z \\
+\hline
+{\em upX} & 相机上方向x \\
+\hline
+{\em upY} & 相机上方向y \\
+\hline
+{\em upZ} & 相机上方向z \\
+\hline
+{\em yaw} & 相机偏航角 \\
+\hline
+{\em pitch} & 相机俯仰角 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_affa333055635aed96518c4c66be9a70c}\label{class_camera_affa333055635aed96518c4c66be9a70c}} 
+\index{Camera@{Camera}!GetViewMatrix@{GetViewMatrix}}
+\index{GetViewMatrix@{GetViewMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetViewMatrix()}{GetViewMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Camera\+::\+Get\+View\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+返回相机的观察矩阵 
+
+\begin{DoxyReturn}{Returns}
+返回相机的观察矩阵 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_camera_aeb4182fdf760f5aa8a27ae6df914596b}\label{class_camera_aeb4182fdf760f5aa8a27ae6df914596b}} 
+\index{Camera@{Camera}!GetViewMatrix\_Qt@{GetViewMatrix\_Qt}}
+\index{GetViewMatrix\_Qt@{GetViewMatrix\_Qt}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetViewMatrix\_Qt()}{GetViewMatrix\_Qt()}}
+{\footnotesize\ttfamily Q\+Matrix4x4 Camera\+::\+Get\+View\+Matrix\+\_\+\+Qt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+返回指定格式的相机的观察矩阵 
+
+\begin{DoxyReturn}{Returns}
+返回指定格式的相机的观察矩阵 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_camera_aebba33a8b281fe2598bcafc54a55d296}\label{class_camera_aebba33a8b281fe2598bcafc54a55d296}} 
+\index{Camera@{Camera}!ProcessKeyboard@{ProcessKeyboard}}
+\index{ProcessKeyboard@{ProcessKeyboard}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{ProcessKeyboard()}{ProcessKeyboard()}}
+{\footnotesize\ttfamily void Camera\+::\+Process\+Keyboard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{Camera\+\_\+\+Movement}}}]{direction,  }\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+处理键盘输入 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & 相机移动方向 \\
+\hline
+{\em delta\+Time} & 相机移动时间 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_camera_a656c2a8dc40150874f15bce47b789751}\label{class_camera_a656c2a8dc40150874f15bce47b789751}} 
+\index{Camera@{Camera}!ProcessMouseMovement@{ProcessMouseMovement}}
+\index{ProcessMouseMovement@{ProcessMouseMovement}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{ProcessMouseMovement()}{ProcessMouseMovement()}}
+{\footnotesize\ttfamily void Camera\+::\+Process\+Mouse\+Movement (\begin{DoxyParamCaption}\item[{float}]{xoffset,  }\item[{float}]{yoffset,  }\item[{G\+Lboolean}]{constrain\+Pitch = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+处理鼠标输入 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xoffset} & \\
+\hline
+{\em yoffset} & \\
+\hline
+{\em constrain\+Pitch} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_camera_a05d150f7dc98940d2dd62f686cc2efe3}\label{class_camera_a05d150f7dc98940d2dd62f686cc2efe3}} 
+\index{Camera@{Camera}!ProcessMouseScroll@{ProcessMouseScroll}}
+\index{ProcessMouseScroll@{ProcessMouseScroll}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{ProcessMouseScroll()}{ProcessMouseScroll()}}
+{\footnotesize\ttfamily void Camera\+::\+Process\+Mouse\+Scroll (\begin{DoxyParamCaption}\item[{float}]{yoffset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+处理鼠标滚轮输入 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yoffset} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_camera_a55d3bb090e071873ebff1f39e1986187}\label{class_camera_a55d3bb090e071873ebff1f39e1986187}} 
+\index{Camera@{Camera}!Transform2Qt@{Transform2Qt}}
+\index{Transform2Qt@{Transform2Qt}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Transform2Qt()}{Transform2Qt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+void Camera\+::\+Transform2\+Qt (\begin{DoxyParamCaption}\item[{T1 \&}]{glmdata,  }\item[{T2 \&}]{qtdata,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_camera_af6712cab8c01e67c049f88d863f9d9bf}\label{class_camera_af6712cab8c01e67c049f88d863f9d9bf}} 
+\index{Camera@{Camera}!Transform2Qt@{Transform2Qt}}
+\index{Transform2Qt@{Transform2Qt}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Transform2Qt()}{Transform2Qt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+void Camera\+::\+Transform2\+Qt (\begin{DoxyParamCaption}\item[{T1 \&}]{glmdata,  }\item[{T2 \&}]{qtdata,  }\item[{int}]{length,  }\item[{bool}]{isvector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_camera_ad424b8b92e580508caf21337b69b93fa}\label{class_camera_ad424b8b92e580508caf21337b69b93fa}} 
+\index{Camera@{Camera}!updateCameraVectors@{updateCameraVectors}}
+\index{updateCameraVectors@{updateCameraVectors}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{updateCameraVectors()}{updateCameraVectors()}}
+{\footnotesize\ttfamily void Camera\+::update\+Camera\+Vectors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+更新相机的方向向量 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_camera_ac95b3737115ffe9a6ff9128344d5b963}\label{class_camera_ac95b3737115ffe9a6ff9128344d5b963}} 
+\index{Camera@{Camera}!Front@{Front}}
+\index{Front@{Front}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Front}{Front}}
+{\footnotesize\ttfamily glm\+::vec3 Camera\+::\+Front}
+
+
+
+相机前方向 
+
+\mbox{\Hypertarget{class_camera_a73e88844b31d5111eeb76327dfbb2d68}\label{class_camera_a73e88844b31d5111eeb76327dfbb2d68}} 
+\index{Camera@{Camera}!MouseSensitivity@{MouseSensitivity}}
+\index{MouseSensitivity@{MouseSensitivity}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{MouseSensitivity}{MouseSensitivity}}
+{\footnotesize\ttfamily float Camera\+::\+Mouse\+Sensitivity = 0.\+1}
+
+
+
+相机鼠标灵敏度 
+
+\mbox{\Hypertarget{class_camera_a63221392d762df6a74f45bc9d43a2f61}\label{class_camera_a63221392d762df6a74f45bc9d43a2f61}} 
+\index{Camera@{Camera}!MovementSpeed@{MovementSpeed}}
+\index{MovementSpeed@{MovementSpeed}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{MovementSpeed}{MovementSpeed}}
+{\footnotesize\ttfamily float Camera\+::\+Movement\+Speed}
+
+
+
+相机移动速度 
+
+\mbox{\Hypertarget{class_camera_af9c8f223bb06bb74fc77c586545e7e67}\label{class_camera_af9c8f223bb06bb74fc77c586545e7e67}} 
+\index{Camera@{Camera}!Pitch@{Pitch}}
+\index{Pitch@{Pitch}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Pitch}{Pitch}}
+{\footnotesize\ttfamily float Camera\+::\+Pitch}
+
+
+
+相机俯仰角 
+
+\mbox{\Hypertarget{class_camera_a9733b59f5340f6f1bca24d52a6679039}\label{class_camera_a9733b59f5340f6f1bca24d52a6679039}} 
+\index{Camera@{Camera}!Position@{Position}}
+\index{Position@{Position}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily glm\+::vec3 Camera\+::\+Position}
+
+
+
+相机位置 
+
+\mbox{\Hypertarget{class_camera_a6624f9f4228f6299a3d4ccb81e28da0a}\label{class_camera_a6624f9f4228f6299a3d4ccb81e28da0a}} 
+\index{Camera@{Camera}!Right@{Right}}
+\index{Right@{Right}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Right}{Right}}
+{\footnotesize\ttfamily glm\+::vec3 Camera\+::\+Right}
+
+
+
+相机右方向 
+
+\mbox{\Hypertarget{class_camera_ad74c4a490bc8865e67e27a2036d0a72d}\label{class_camera_ad74c4a490bc8865e67e27a2036d0a72d}} 
+\index{Camera@{Camera}!Up@{Up}}
+\index{Up@{Up}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Up}{Up}}
+{\footnotesize\ttfamily glm\+::vec3 Camera\+::\+Up}
+
+
+
+相机上方向 
+
+\mbox{\Hypertarget{class_camera_a340d30b833954b87fd016ce0e724c723}\label{class_camera_a340d30b833954b87fd016ce0e724c723}} 
+\index{Camera@{Camera}!WorldUp@{WorldUp}}
+\index{WorldUp@{WorldUp}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{WorldUp}{WorldUp}}
+{\footnotesize\ttfamily glm\+::vec3 Camera\+::\+World\+Up}
+
+
+
+相机世界坐标系中的上方向 
+
+\mbox{\Hypertarget{class_camera_a1a1354a2bd2df7f18ef82924e671d241}\label{class_camera_a1a1354a2bd2df7f18ef82924e671d241}} 
+\index{Camera@{Camera}!Yaw@{Yaw}}
+\index{Yaw@{Yaw}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Yaw}{Yaw}}
+{\footnotesize\ttfamily float Camera\+::\+Yaw}
+
+
+
+相机偏航角 
+
+\mbox{\Hypertarget{class_camera_a2becf27d08eb7e6da9c597c73ea95b5d}\label{class_camera_a2becf27d08eb7e6da9c597c73ea95b5d}} 
+\index{Camera@{Camera}!Zoom@{Zoom}}
+\index{Zoom@{Zoom}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Zoom}{Zoom}}
+{\footnotesize\ttfamily float Camera\+::\+Zoom}
+
+
+
+相机缩放 
+

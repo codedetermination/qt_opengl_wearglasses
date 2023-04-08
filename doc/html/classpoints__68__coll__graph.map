@@ -1,0 +1,4 @@
+<map id="points_68" name="points_68">
+<area shape="rect" id="node1" title="从给定的图像之中估计出68个关键点。 从给定的图像之中估计出68个关键点储存到pts文件中，并且返回一个Mat类型的图像，其中包含了68个关键点。" alt="" coords="5,95,91,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="25,5,71,32"/>
+</map>

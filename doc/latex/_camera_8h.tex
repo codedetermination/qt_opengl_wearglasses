@@ -1,0 +1,112 @@
+\hypertarget{_camera_8h}{}\doxysection{/home/guoyi/\+Desktop/shejigame/qt\+\_\+opengl\+\_\+wearglasses/\+Camera.h File Reference}
+\label{_camera_8h}\index{/home/guoyi/Desktop/shejigame/qt\_opengl\_wearglasses/Camera.h@{/home/guoyi/Desktop/shejigame/qt\_opengl\_wearglasses/Camera.h}}
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/matrix\+\_\+transform.\+hpp$>$}\newline
+{\ttfamily \#include $<$Qt\+Open\+G\+L\+Widgets$>$}\newline
+{\ttfamily \#include $<$Q\+Open\+G\+L\+Functions$>$}\newline
+{\ttfamily \#include $<$Q\+Open\+G\+L\+Extra\+Functions$>$}\newline
+Include dependency graph for Camera.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_camera_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{_camera_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_camera}{Camera}}
+\begin{DoxyCompactList}\small\item\em 相机类 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{Camera\+\_\+\+Movement}} \{ \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1}{F\+O\+R\+W\+A\+RD}}, 
+\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6}{B\+A\+C\+K\+W\+A\+RD}}, 
+\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065}{L\+E\+FT}}, 
+\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38}{R\+I\+G\+HT}}
+ \}
+\begin{DoxyCompactList}\small\item\em 定义了相机的移动选项 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}{Y\+AW}} = -\/90.\+0f
+\item 
+const float \mbox{\hyperlink{_camera_8h_ab32939bf039c742431f67a815575ed21}{P\+I\+T\+CH}} = 0.\+0f
+\item 
+const float \mbox{\hyperlink{_camera_8h_a6a2935f139d2e8f1ba438d98773d0d66}{S\+P\+E\+ED}} = 2.\+5f
+\item 
+const float \mbox{\hyperlink{_camera_8h_a48264de497b9f41df4c556f9321fe315}{S\+E\+N\+S\+I\+T\+I\+V\+I\+TY}} = 0.\+1f
+\item 
+const float \mbox{\hyperlink{_camera_8h_ad53f4ea4bad2000e469a9b538c39878f}{Z\+O\+OM}} = 45.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}} 
+\index{Camera.h@{Camera.h}!Camera\_Movement@{Camera\_Movement}}
+\index{Camera\_Movement@{Camera\_Movement}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{Camera\_Movement}{Camera\_Movement}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{Camera\+\_\+\+Movement}}}
+
+
+
+定义了相机的移动选项 
+
+定义相机移动的几个可能选项。 用作抽象以远离窗口系统特定的输入法 \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORWARD@{FORWARD}!Camera.h@{Camera.h}}\index{Camera.h@{Camera.h}!FORWARD@{FORWARD}}}\mbox{\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1}} 
+F\+O\+R\+W\+A\+RD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BACKWARD@{BACKWARD}!Camera.h@{Camera.h}}\index{Camera.h@{Camera.h}!BACKWARD@{BACKWARD}}}\mbox{\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6}} 
+B\+A\+C\+K\+W\+A\+RD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!Camera.h@{Camera.h}}\index{Camera.h@{Camera.h}!LEFT@{LEFT}}}\mbox{\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065}} 
+L\+E\+FT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!Camera.h@{Camera.h}}\index{Camera.h@{Camera.h}!RIGHT@{RIGHT}}}\mbox{\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38}} 
+R\+I\+G\+HT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_camera_8h_ab32939bf039c742431f67a815575ed21}\label{_camera_8h_ab32939bf039c742431f67a815575ed21}} 
+\index{Camera.h@{Camera.h}!PITCH@{PITCH}}
+\index{PITCH@{PITCH}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{PITCH}{PITCH}}
+{\footnotesize\ttfamily const float P\+I\+T\+CH = 0.\+0f}
+
+\mbox{\Hypertarget{_camera_8h_a48264de497b9f41df4c556f9321fe315}\label{_camera_8h_a48264de497b9f41df4c556f9321fe315}} 
+\index{Camera.h@{Camera.h}!SENSITIVITY@{SENSITIVITY}}
+\index{SENSITIVITY@{SENSITIVITY}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{SENSITIVITY}{SENSITIVITY}}
+{\footnotesize\ttfamily const float S\+E\+N\+S\+I\+T\+I\+V\+I\+TY = 0.\+1f}
+
+\mbox{\Hypertarget{_camera_8h_a6a2935f139d2e8f1ba438d98773d0d66}\label{_camera_8h_a6a2935f139d2e8f1ba438d98773d0d66}} 
+\index{Camera.h@{Camera.h}!SPEED@{SPEED}}
+\index{SPEED@{SPEED}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{SPEED}{SPEED}}
+{\footnotesize\ttfamily const float S\+P\+E\+ED = 2.\+5f}
+
+\mbox{\Hypertarget{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}\label{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}} 
+\index{Camera.h@{Camera.h}!YAW@{YAW}}
+\index{YAW@{YAW}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{YAW}{YAW}}
+{\footnotesize\ttfamily const float Y\+AW = -\/90.\+0f}
+
+\mbox{\Hypertarget{_camera_8h_ad53f4ea4bad2000e469a9b538c39878f}\label{_camera_8h_ad53f4ea4bad2000e469a9b538c39878f}} 
+\index{Camera.h@{Camera.h}!ZOOM@{ZOOM}}
+\index{ZOOM@{ZOOM}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{ZOOM}{ZOOM}}
+{\footnotesize\ttfamily const float Z\+O\+OM = 45.\+0f}
+

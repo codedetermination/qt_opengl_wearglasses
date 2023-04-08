@@ -1,0 +1,243 @@
+\hypertarget{class_model}{}\doxysection{Model Class Reference}
+\label{class_model}\index{Model@{Model}}
+
+
+模型类 模型类，用于加载模型，绘制模型，加载纹理等  
+
+
+
+
+{\ttfamily \#include $<$Model.\+h$>$}
+
+
+
+Collaboration diagram for Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_a772b57c3234208b5e7e446d148013ae0}{Model}} (string const \&path, \mbox{\hyperlink{class_shader}{Shader}} $\ast$sha, bool gamma=false)
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+是否开启gamma校正 \end{quote}
+\end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_mesh}{Mesh}} $>$ \mbox{\hyperlink{class_model_a4f8e05523c2b46767f637485091954d4}{returnmesh}} ()
+\begin{DoxyCompactList}\small\item\em 返回模型的网格数组 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_texture}{Texture}} $>$ \mbox{\hyperlink{class_model_a866353fd9967b57286864fac87799ae1}{textures\+\_\+loaded}}
+\item 
+string \mbox{\hyperlink{class_model_a5d77b67392e10756ca9c5075b2abedea}{directory}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+已加载的纹理 \end{quote}
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shader}{Shader}} $\ast$ \mbox{\hyperlink{class_model_ada3275a4feac30511fc7b69544f90099}{shader}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+模型所在目录 \end{quote}
+\end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_mesh}{Mesh}} $>$ \mbox{\hyperlink{class_model_a72a26cbf98357f2076b02191a49c905b}{meshvector}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+着色器 \end{quote}
+\end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_model_ad77d358db2ff46758774b8a621f60db3}{gamma\+Correction}}
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+网格数组 \end{quote}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_model_a1033e3ef04119cd665593b9bf1679850}{load\+Model}} (string const \&path)
+\begin{DoxyCompactList}\small\item\em 加载模型 从路径加载模型,并初始化模型,加载纹理等,并将模型的网格数组返回,用于绘制模型。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_a23b167ce0d33f7e6ab5693cd5e81a9a5}{process\+Node}} (ai\+Node $\ast$node, const ai\+Scene $\ast$scene)
+\begin{DoxyCompactList}\small\item\em 处理节点 处理节点,递归处理节点,并将节点的网格数组返回,用于绘制模型。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_a634841fa068c41ce43e3ecbda72b4140}{process\+Mesh}} (ai\+Mesh $\ast$mesh, const ai\+Scene $\ast$scene)
+\begin{DoxyCompactList}\small\item\em 处理网格 处理网格,并将网格的顶点数组返回,用于绘制模型。 \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_texture}{Texture}} $>$ \mbox{\hyperlink{class_model_a540edeef03c92d0aa3f73dfceeaef4f6}{load\+Material\+Textures}} (ai\+Material $\ast$mat, ai\+Texture\+Type type, string type\+Name)
+\begin{DoxyCompactList}\small\item\em 加载材质纹理 加载材质纹理,并将纹理的路径返回,用于绘制模型。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+模型类 模型类，用于加载模型，绘制模型，加载纹理等 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & 模型路径 \\
+\hline
+{\em directory} & 模型所在目录 \\
+\hline
+{\em gamma} & 是否开启gamma校正 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_a772b57c3234208b5e7e446d148013ae0}\label{class_model_a772b57c3234208b5e7e446d148013ae0}} 
+\index{Model@{Model}!Model@{Model}}
+\index{Model@{Model}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{Model()}{Model()}}
+{\footnotesize\ttfamily Model\+::\+Model (\begin{DoxyParamCaption}\item[{string const \&}]{path,  }\item[{\mbox{\hyperlink{class_shader}{Shader}} $\ast$}]{sha,  }\item[{bool}]{gamma = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\begin{quote}
+是否开启gamma校正 \end{quote}
+
+
+模型构造函数 模型构造函数，用于加载模型,并初始化模型,加载纹理等,并将模型的网格数组返回,用于绘制模型。 
+\begin{DoxyParams}{Parameters}
+{\em path} & 模型路径 \\
+\hline
+{\em sha} & 着色器 \\
+\hline
+{\em gamma} & 是否开启gamma校正 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_a540edeef03c92d0aa3f73dfceeaef4f6}\label{class_model_a540edeef03c92d0aa3f73dfceeaef4f6}} 
+\index{Model@{Model}!loadMaterialTextures@{loadMaterialTextures}}
+\index{loadMaterialTextures@{loadMaterialTextures}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{loadMaterialTextures()}{loadMaterialTextures()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_texture}{Texture}}$>$ Model\+::load\+Material\+Textures (\begin{DoxyParamCaption}\item[{ai\+Material $\ast$}]{mat,  }\item[{ai\+Texture\+Type}]{type,  }\item[{string}]{type\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+加载材质纹理 加载材质纹理,并将纹理的路径返回,用于绘制模型。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & 材质 \\
+\hline
+{\em type} & 纹理类型 \\
+\hline
+{\em type\+Name} & 纹理类型名称 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+纹理路径 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_a1033e3ef04119cd665593b9bf1679850}\label{class_model_a1033e3ef04119cd665593b9bf1679850}} 
+\index{Model@{Model}!loadModel@{loadModel}}
+\index{loadModel@{loadModel}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{loadModel()}{loadModel()}}
+{\footnotesize\ttfamily void Model\+::load\+Model (\begin{DoxyParamCaption}\item[{string const \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+加载模型 从路径加载模型,并初始化模型,加载纹理等,并将模型的网格数组返回,用于绘制模型。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & 模型路径 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_a634841fa068c41ce43e3ecbda72b4140}\label{class_model_a634841fa068c41ce43e3ecbda72b4140}} 
+\index{Model@{Model}!processMesh@{processMesh}}
+\index{processMesh@{processMesh}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{processMesh()}{processMesh()}}
+{\footnotesize\ttfamily void Model\+::process\+Mesh (\begin{DoxyParamCaption}\item[{ai\+Mesh $\ast$}]{mesh,  }\item[{const ai\+Scene $\ast$}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+处理网格 处理网格,并将网格的顶点数组返回,用于绘制模型。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & 网格 \\
+\hline
+{\em scene} & 场景 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_a23b167ce0d33f7e6ab5693cd5e81a9a5}\label{class_model_a23b167ce0d33f7e6ab5693cd5e81a9a5}} 
+\index{Model@{Model}!processNode@{processNode}}
+\index{processNode@{processNode}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{processNode()}{processNode()}}
+{\footnotesize\ttfamily void Model\+::process\+Node (\begin{DoxyParamCaption}\item[{ai\+Node $\ast$}]{node,  }\item[{const ai\+Scene $\ast$}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+处理节点 处理节点,递归处理节点,并将节点的网格数组返回,用于绘制模型。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & 节点 \\
+\hline
+{\em scene} & 场景 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_a4f8e05523c2b46767f637485091954d4}\label{class_model_a4f8e05523c2b46767f637485091954d4}} 
+\index{Model@{Model}!returnmesh@{returnmesh}}
+\index{returnmesh@{returnmesh}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{returnmesh()}{returnmesh()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_mesh}{Mesh}}$>$ Model\+::returnmesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+返回模型的网格数组 
+
+\begin{DoxyReturn}{Returns}
+网格数组 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_model_a5d77b67392e10756ca9c5075b2abedea}\label{class_model_a5d77b67392e10756ca9c5075b2abedea}} 
+\index{Model@{Model}!directory@{directory}}
+\index{directory@{directory}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{directory}{directory}}
+{\footnotesize\ttfamily string Model\+::directory}
+
+
+
+\begin{quote}
+已加载的纹理 \end{quote}
+
+
+\mbox{\Hypertarget{class_model_ad77d358db2ff46758774b8a621f60db3}\label{class_model_ad77d358db2ff46758774b8a621f60db3}} 
+\index{Model@{Model}!gammaCorrection@{gammaCorrection}}
+\index{gammaCorrection@{gammaCorrection}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{gammaCorrection}{gammaCorrection}}
+{\footnotesize\ttfamily bool Model\+::gamma\+Correction}
+
+
+
+\begin{quote}
+网格数组 \end{quote}
+
+
+\mbox{\Hypertarget{class_model_a72a26cbf98357f2076b02191a49c905b}\label{class_model_a72a26cbf98357f2076b02191a49c905b}} 
+\index{Model@{Model}!meshvector@{meshvector}}
+\index{meshvector@{meshvector}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{meshvector}{meshvector}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_mesh}{Mesh}}$>$ Model\+::meshvector}
+
+
+
+\begin{quote}
+着色器 \end{quote}
+
+
+\mbox{\Hypertarget{class_model_ada3275a4feac30511fc7b69544f90099}\label{class_model_ada3275a4feac30511fc7b69544f90099}} 
+\index{Model@{Model}!shader@{shader}}
+\index{shader@{shader}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{shader}{shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shader}{Shader}}$\ast$ Model\+::shader}
+
+
+
+\begin{quote}
+模型所在目录 \end{quote}
+
+
+\mbox{\Hypertarget{class_model_a866353fd9967b57286864fac87799ae1}\label{class_model_a866353fd9967b57286864fac87799ae1}} 
+\index{Model@{Model}!textures\_loaded@{textures\_loaded}}
+\index{textures\_loaded@{textures\_loaded}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{textures\_loaded}{textures\_loaded}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_texture}{Texture}}$>$ Model\+::textures\+\_\+loaded}
+
